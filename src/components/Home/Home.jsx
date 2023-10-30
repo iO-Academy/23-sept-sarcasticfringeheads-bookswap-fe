@@ -1,3 +1,4 @@
+import "./Home.css"
 import { useEffect, useState } from "react"
 import BookListing from "../Booklisting/Booklisting"
 
@@ -19,11 +20,10 @@ function Home() {
         <>
         <p> this is the home page
         </p>
-        <BookListing />
         <div className='books-container'>
-        {books.map(book => 
-        <BookListing title={book.title} author={book.author} image={book.image} genre={book.genre.name} />    
-        )}
+            {books.map(book => 
+            <BookListing title={book.title} author={book.author} image={book.image} genre={book.genre.name} />    
+            )}
         </div>
 
         </>
