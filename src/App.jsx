@@ -1,8 +1,10 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './App.css'
 import Nav from './components/Nav/Nav'
-import Home from './components/home/home'
+
 import Error from './components/Error/Error'
+import SingleBookDetail from './components/Booklisting/SingleBookDetail/SingleBookDetail'
+import Home from './components/Home/Home'
 function App() {
   
 
@@ -12,6 +14,7 @@ function App() {
    <Routes>
     <Route path='/' element={<Home />} />
     <Route path='*' element={<Error />} />
+    <Route path='/books/:id' element={<SingleBookDetail />} />
    </Routes>
    
    
