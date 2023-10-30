@@ -4,6 +4,7 @@ import BookListing from "../Booklisting/Booklisting"
 
 function Home() {
     const [books, setBooks] = useState ([])
+    const [clickedBookId, setclickedBookId] = useState(null)
 
 
     useEffect (function() {
@@ -21,7 +22,14 @@ function Home() {
         
         <div className='books-container'>
             {books.map(book => 
-            <BookListing title={book.title} author={book.author} image={book.image} genre={book.genre.name} />    
+            <BookListing 
+            title={book.title} 
+            author={book.author} 
+            image={book.image} 
+            genre={book.genre.name} 
+            id={book.id} 
+            key={book.id}
+            setClickedBookId={setclickedBookId}/>    
             )}
         </div>
 
