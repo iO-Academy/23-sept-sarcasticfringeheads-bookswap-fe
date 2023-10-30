@@ -1,7 +1,14 @@
+import { NavLink } from "react-router-dom"
+import './Nav.css'
+
 function Nav() {
     return (
         <>
-        <p>this is the nav</p>
+        <nav>
+            <ul>
+                <NavLink to='/'>Book Swap</NavLink>
+            </ul>
+        </nav>
         </>
     )
 }

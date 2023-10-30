@@ -18,8 +18,7 @@ function Home() {
    
     return (
         <>
-        <p> this is the home page
-        </p>
+        
         <div className='books-container'>
             {books.map(book => 
             <BookListing title={book.title} author={book.author} image={book.image} genre={book.genre.name} />    
