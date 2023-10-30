@@ -1,7 +1,7 @@
 // booklisting will take props to display JSON data from Home 
-function Booklisting(){
+function BookListing(){
     <>
     <p>this is a book</p>
     </>
 }
-export default Booklisting
+export default BookListing
