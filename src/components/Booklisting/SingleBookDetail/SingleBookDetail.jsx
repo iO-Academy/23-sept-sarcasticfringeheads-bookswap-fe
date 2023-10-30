@@ -1,5 +1,8 @@
+import "./SingleBookDetail.css"
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
+
+
 function SingleBookDetail () {
     const [title, setTitle] = useState('')
     const [blurb, setBlurb] = useState('')
@@ -16,7 +19,6 @@ function SingleBookDetail () {
             return res.json()
         })
         .then(function(bookData){
-            console.log(bookData)
             setTitle(bookData.data.title)
             setAuthor(bookData.data.author)
             setBlurb(bookData.data.blurb)
@@ -29,13 +31,13 @@ function SingleBookDetail () {
     }, [])
     
     return (
-        <div>
-            <div>
+        <div className ="display_container">
+            <div className="display_container image">
               <img src={image} alt={title} />
             </div>
-            <div>
+            <div className="display_container content">
               <h1>{title}</h1>
-              <p>{author}</p>
+              <h2>{author}</h2>
               <p>{year}</p>
               <p>{pageCount}</p>
               <p>{genre}</p>
