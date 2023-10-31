@@ -8,7 +8,7 @@ nav {
     top: 0;
     left:0;
     width: 100%;
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0);
     padding: 20px;
     max-height: 100px;
 }
@@ -20,12 +20,18 @@ nav ul {
     align-content:center;
     align-items:center;
     font-size: 3rem;
-    
-
 }
 
 nav ul a {
     text-decoration: none;
     cursor: pointer;
+    color: aliceblue;
+
+}
+
+nav ul a:hover {
+    text-decoration: none;
+    cursor: pointer;
+    color: rgb(255, 182, 87);
 
 }

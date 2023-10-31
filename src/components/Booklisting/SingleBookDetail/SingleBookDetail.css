@@ -17,8 +17,6 @@
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     border-radius: 5px;
 
-    
-  
 }
 
 .display_container.image img {
@@ -28,6 +26,10 @@
 }
 .display_container.content p {
     font-size: 20px;
+}
+
+.display_container.content p.blurb {
+    margin-top:-10px;
 }
 
 .display_container.content h1 {
