@@ -14,6 +14,9 @@
     height:600px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .display_container.image img {
@@ -30,4 +33,29 @@
 
 .display_container.content h1 {
     font-size: 50px;
+}
+
+.display_container form {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    
+}
+
+.bothFormsContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.claimedBookForm {
+    width: 500px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
 }

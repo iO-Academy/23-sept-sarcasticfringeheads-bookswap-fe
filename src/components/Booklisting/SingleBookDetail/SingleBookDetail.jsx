@@ -40,10 +40,10 @@ function SingleBookDetail () {
     }, [])
     
     return (
+        <div className="bothFormsContainer">
         <div className= "display_container">
             <div className= "display_container image">
               <img src={image} alt={title} />
-              
             </div>
             <div className= "display_container content">
               <h1>{title}</h1>
@@ -52,14 +52,21 @@ function SingleBookDetail () {
               <p><strong>Pages:</strong> {pageCount}</p>
               <p><strong>Genre:</strong> {genre}</p>
               <p><strong>Blurb:</strong></p>
-              <p className="blurb">{blurb}</p>
-
-                {/* If capitalName == null, display the form to claim the book */}
-                {!capitalName && <ClaimBookForm id={id}/> }
-                {/* If capitalName has a value (isnt null), display the name of the claimant  */}
-                {capitalName && <p><strong>Claimed by:</strong> {capitalName}</p>}
-                
+              <p className="blurb">{blurb}</p> 
             </div>
+        </div>
+        <div className="display_container form">
+                <div className="claimedBookForm">
+                  {/* if isClaimed == null, display the form to claim the book */}
+                  {!capitalName && <ClaimBookForm pagerefresh={PageRefresh} id={id}/> }
+                  {capitalName && <p><strong>Claimed by:</strong> {capitalName}</p>}
+                </div>
+                <div className="claimedBookForm">
+                 {/* if isClaimed == null, display the form to claim the book */}
+                 {!capitalName && <ClaimBookForm pagerefresh={PageRefresh} id={id}/> }
+                 {capitalName && <p><strong>Claimed by:</strong> {capitalName}</p>}
+                </div>
+        </div>
         </div>
     )
 }

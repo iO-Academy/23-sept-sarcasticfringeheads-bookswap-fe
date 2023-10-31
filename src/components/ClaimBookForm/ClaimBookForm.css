@@ -1,0 +1,24 @@
+.claimFormContainer {
+    border: none;
+    padding: 10px;
+    display: flex;
+    background-color: grey;
+    color: white;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+}
+
+.claim-book {
+    display: flex;
+    flex-direction: column;
+}
+
+.claimSumbit {
+    width: 50%;
+    border-radius: 5px;;
+}
+
+.claim-book h3 {
+    margin-top: 0px;
+}
