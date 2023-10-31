@@ -7,15 +7,10 @@ function ClaimBookForm({id}) {
 
 
     function claimAttempt(event) {
-        // submit claim request for relevant book
-        console.log('submitted')
-        event.preventDefault()
-        console.log(event.target.name.value)
+        
         let submitted_email = event.target.email.value
         let submitted_name = event.target.name.value
-        console.log(submitted_email)
-        console.log(submitted_name)
-
+    
         fetch('https://book-swap-api.dev.io-academy.uk/api/books/claim/' + id, {
             method: 'PUT',
             mode: 'cors',
@@ -30,21 +25,19 @@ function ClaimBookForm({id}) {
         .then((res) => {
             if (res.ok) {
                 console.log('Claim request submitted successfully with book' + id);
-                // Successfully Claimed -> remove form and display claim success message
+                // Successfully Claimed -> **TODO**: remove form and display claim success message
 
             } else {
                 console.error('Failed to submit claim request with book.' + id);
-                // Error in Claiming -> Red text at the top of the form saying error. 
+                // Error in Claiming -> **TODO** Red text at the top of the form saying error submitting. 
             }
         })
         .catch((error) => {
             console.error('Error:', error);
-            // Some other error. issue apology.
-            console.log('something else went wrong with claiming')
+            // Some other error. **TODO** Red text at the top of form saying error submitting.
         });
-        
-
     }
+
     return (
         <div>
             <h3>Claim this book:</h3>
@@ -54,7 +47,6 @@ function ClaimBookForm({id}) {
                     <label htmlFor="email" value={email} onChange={setEmail}>Email:</label>
                     <input type="email" id='email'></input>
                     <input type='submit' value='Claim'></input>
-
                 </form>
         </div>
     )

@@ -49,7 +49,8 @@ function SingleBookDetail () {
               <p><strong>Blurb:</strong></p>
               <p className="blurb">{blurb}</p>
 
-            {!isClaimed && <ClaimBookForm id={id}/> }
+                {/* if isClaimed == null, display the form to claim the book */}
+                {!isClaimed && <ClaimBookForm id={id}/> }
               
             </div>
         </div>
