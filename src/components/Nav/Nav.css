@@ -1,23 +1,37 @@
 nav {
     position: fixed;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content:center;
+    align-items:center;
     top: 0;
+    left:0;
     width: 100%;
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0);
     padding: 20px;
-    max-height: 300px;
+    max-height: 100px;
 }
 
 nav ul {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    font-size: 5rem;
-    
-
+    align-content:center;
+    align-items:center;
+    font-size: 3rem;
 }
 
 nav ul a {
     text-decoration: none;
     cursor: pointer;
+    color: aliceblue;
+
+}
+
+nav ul a:hover {
+    text-decoration: none;
+    cursor: pointer;
+    color: rgb(255, 182, 87);
 
 }
