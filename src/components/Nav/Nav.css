@@ -3,13 +3,13 @@ nav {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-content:space-between;
-    align-items: space-between;
+    align-content: center;
+    align-items: center;
     top: 0;
     left:0;
     width: 100%;
     background: rgba(0, 0, 0);
-    padding: 20px;
+    padding: 10px;
     max-height: 100px;
 }
 
@@ -19,18 +19,27 @@ nav ul {
     justify-content: space-between;
     align-content: space-between;
     align-items:center;
-    font-size: 3rem;
+    font-size: 2rem;
+    padding-right: 50px;
 }
 
 nav ul a {
     text-decoration: none;
     cursor: pointer;
     color: aliceblue;
-
+    padding: 0 10px;
 }
 
 nav ul a:hover {
     text-decoration: none;
     cursor: pointer;
+    color: rgb(255, 182, 87);
+}
+
+.navbooks{
+    font-size: medium;
+}
+
+.active{
     color: rgb(255, 182, 87);
 }
