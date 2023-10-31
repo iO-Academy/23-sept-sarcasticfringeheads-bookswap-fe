@@ -7,6 +7,7 @@ nav {
     align-items:center;
     top: 0;
     left:0;
+    right: 0;
     width: 100%;
     background: rgba(0, 0, 0);
     padding: 20px;
@@ -17,16 +18,23 @@ nav ul {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-content:center;
-    align-items:center;
     font-size: 3rem;
+    text-align: left;
+    padding: 0px 0px 0px 0px;
+    
+}
+
+@media screen and (max-width: 400px) {
+    nav ul {
+        font-size: 2rem;
+    }
 }
 
 nav ul a {
     text-decoration: none;
     cursor: pointer;
     color: aliceblue;
-
+    text-align: center;
 }
 
 nav ul a:hover {
