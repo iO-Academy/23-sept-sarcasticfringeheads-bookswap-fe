@@ -12,15 +12,9 @@ function SingleBookDetail () {
     const [year, setYear] = useState ('')
     const [author, setAuthor] = useState('')
     const [genre, setGenre] = useState('')
-    const [isClaimed, setIsClaimed] = useState(null)
+    const [isClaimed, setIsClaimed] = useState(null) // currently redundant but important to not change in case capitilisation is done through css later 
     const {id} = useParams()
     const [capitalName, setCapitalName] = useState(null)
-
-
-function PageRefresh () {
-
-}
-
 
     useEffect (function(){
         fetch('https://book-swap-api.dev.io-academy.uk/api/books/' +id)
@@ -36,13 +30,14 @@ function PageRefresh () {
             setImage(bookData.data.image)
             setPageCount(bookData.data.page_count)
             setGenre(bookData.data.genre.name)
-            let claimed = (bookData.data.claimed_by_name)
-            setIsClaimed(claimed)
-            if(claimed){ 
-                setCapitalName (claimed.charAt(0).toUpperCase() + claimed.slice(1))
+            setIsClaimed(claimed) // currently redundant but important to not change in case capitilisation is done through css later 
+            
+            let claimed = (bookData.data.claimed_by_name) //if claimed_by_name returns a string (not null
+            if (claimed) { 
+                setCapitalName (claimed.charAt(0).toUpperCase() + claimed.slice(1)) // set capitalName to capitalised version of claimed
             }
         })
-    }, [PageRefresh])
+    }, [])
     
     return (
         <div className="bothFormsContainer">
