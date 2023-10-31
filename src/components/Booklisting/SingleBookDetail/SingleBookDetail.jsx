@@ -16,6 +16,12 @@ function SingleBookDetail () {
     const {id} = useParams()
     const [capitalName, setCapitalName] = useState(null)
 
+
+function PageRefresh () {
+
+}
+
+
     useEffect (function(){
         fetch('https://book-swap-api.dev.io-academy.uk/api/books/' +id)
         .then(function(res){
@@ -30,12 +36,13 @@ function SingleBookDetail () {
             setImage(bookData.data.image)
             setPageCount(bookData.data.page_count)
             setGenre(bookData.data.genre.name)
-            setIsClaimed(bookData.data.claimed_by_name)
-            if(isClaimed){ 
-                setCapitalName (isClaimed.charAt(0).toUpperCase() + isClaimed.slice(1))
+            let claimed = (bookData.data.claimed_by_name)
+            setIsClaimed(claimed)
+            if(claimed){ 
+                setCapitalName (claimed.charAt(0).toUpperCase() + claimed.slice(1))
             }
         })
-    }, [])
+    }, [PageRefresh])
     
     return (
         <div className= "display_container">
@@ -53,7 +60,7 @@ function SingleBookDetail () {
               <p className="blurb">{blurb}</p>
 
                 {/* if isClaimed == null, display the form to claim the book */}
-                {!capitalName && <ClaimBookForm id={id}/> }
+                {!capitalName && <ClaimBookForm pagerefresh={PageRefresh} id={id}/> }
                 {capitalName && <p><strong>Claimed by:</strong> {capitalName}</p>}
                 
             </div>

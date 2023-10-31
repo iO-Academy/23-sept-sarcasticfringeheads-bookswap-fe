@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-function ClaimBookForm({id}) {
+function ClaimBookForm({id, pagerefresh}) {
     
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
@@ -25,7 +25,7 @@ function ClaimBookForm({id}) {
         .then((res) => {
             if (res.ok) {
                 console.log('Claim request submitted successfully with book' + id);
-                // Successfully Claimed -> **TODO**: remove form and display claim success message
+               
 
             } else {
                 console.error('Failed to submit claim request with book.' + id);
