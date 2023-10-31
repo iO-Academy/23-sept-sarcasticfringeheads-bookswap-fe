@@ -18,24 +18,18 @@ function Home() {
     }, [])
    
     return (
-        <>
-        
         <div className='books-container'>
             {books.map(book => 
             <BookListing 
-            title={book.title} 
-            author={book.author} 
-            image={book.image} 
-            genre={book.genre.name} 
-            id={book.id} 
-            key={book.id}
-            setClickedBookId={setclickedBookId}/>    
+                title={book.title} 
+                author={book.author} 
+                image={book.image} 
+                genre={book.genre.name} 
+                id={book.id} 
+                key={book.id}
+                setClickedBookId={setclickedBookId}/>    
             )}
         </div>
-
-        </>
-
-        
     )
 }
 export default Home

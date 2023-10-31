@@ -7,6 +7,7 @@ nav {
     align-items: center;
     top: 0;
     left:0;
+    right: 0;
     width: 100%;
     background: rgba(0, 0, 0);
     padding: 10px;
@@ -23,10 +24,17 @@ nav ul {
     padding-right: 50px;
 }
 
+@media screen and (max-width: 400px) {
+    nav ul {
+        font-size: 2rem;
+    }
+}
+
 nav ul a {
     text-decoration: none;
     cursor: pointer;
     color: aliceblue;
+    text-align: center;
     padding: 0 10px;
 }
 
@@ -36,10 +44,10 @@ nav ul a:hover {
     color: rgb(255, 182, 87);
 }
 
-.navbooks{
+.navbooks {
     font-size: medium;
 }
 
-.active{
+.active {
     color: rgb(255, 182, 87);
 }

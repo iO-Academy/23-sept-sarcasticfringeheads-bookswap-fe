@@ -3,7 +3,6 @@ import './Nav.css'
 
 function Nav() {
     return (
-        <>
         <nav>
             <ul>
                 <NavLink to='/'>Book Swap</NavLink>
@@ -16,7 +15,6 @@ function Nav() {
 
         
         </nav>
-        </>
     )
 }
 export default Nav
