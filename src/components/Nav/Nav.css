@@ -2,9 +2,9 @@ nav {
     position: fixed;
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    align-content:center;
-    align-items:center;
+    justify-content: space-between;
+    align-content:space-between;
+    align-items: space-between;
     top: 0;
     left:0;
     width: 100%;
@@ -16,8 +16,8 @@ nav {
 nav ul {
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    align-content:center;
+    justify-content: space-between;
+    align-content: space-between;
     align-items:center;
     font-size: 3rem;
 }
@@ -33,5 +33,4 @@ nav ul a:hover {
     text-decoration: none;
     cursor: pointer;
     color: rgb(255, 182, 87);
-
 }

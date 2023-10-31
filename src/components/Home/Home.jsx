@@ -8,7 +8,7 @@ function Home() {
 
 
     useEffect (function() {
-        fetch('https://book-swap-api.dev.io-academy.uk/api/books')
+        fetch('https://book-swap-api.dev.io-academy.uk/api/books?claimed=0')
             .then(function (res) {
                 return res.json()
             })
