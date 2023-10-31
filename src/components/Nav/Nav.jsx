@@ -7,6 +7,7 @@ function Nav() {
         <nav>
             <ul>
                 <NavLink to='/'>Book Swap</NavLink>
+                <NavLink to="/books/claimed">Claimed Books</NavLink>
             </ul>
         </nav>
         </>

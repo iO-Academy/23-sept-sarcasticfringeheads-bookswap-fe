@@ -3,8 +3,6 @@
     flex-direction: row;
     margin:30px;
     margin-top: 200px;
- 
-
 }
 
 .display_container.content {
@@ -16,13 +14,11 @@
     height:600px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     border-radius: 5px;
-
 }
 
 .display_container.image img {
     height:600px;
     border-radius: 5px;
-
 }
 .display_container.content p {
     font-size: 20px;
