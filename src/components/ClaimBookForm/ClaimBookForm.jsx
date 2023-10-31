@@ -1,13 +1,12 @@
 import { useState } from "react"
 
-function ClaimBookForm({id, pagerefresh}) {
+function ClaimBookForm({id}) {
     
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
 
-
     function claimAttempt(event) {
-        
+    
         let submitted_email = event.target.email.value
         let submitted_name = event.target.name.value
     
@@ -25,10 +24,11 @@ function ClaimBookForm({id, pagerefresh}) {
         .then((res) => {
             if (res.ok) {
                 console.log('Claim request submitted successfully with book' + id);
-               
+                console.log('success')
 
             } else {
                 console.error('Failed to submit claim request with book.' + id);
+                console.log('fail')
                 // Error in Claiming -> **TODO** Red text at the top of the form saying error submitting. 
             }
         })
@@ -51,4 +51,5 @@ function ClaimBookForm({id, pagerefresh}) {
         </div>
     )
 }
+
 export default ClaimBookForm
