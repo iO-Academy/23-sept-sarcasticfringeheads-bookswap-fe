@@ -2,6 +2,7 @@ import "./SingleBookDetail.css"
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import ClaimBookForm from "../../ClaimBookForm/ClaimBookForm"
+import BookReturnForm from "../../BookReturnForm/BookReturnForm"
 
 
 function SingleBookDetail () {
@@ -47,24 +48,21 @@ function SingleBookDetail () {
               <img src={image} alt={title} />
             </div>
             <div className= "display_container content">
-               <div> 
-                    <h1>{title}</h1>
-                    <p><strong>Author:</strong> {author}</p>
-                    <p><strong>Published:</strong> {year}</p>
-                    <p><strong>Pages:</strong> {pageCount}</p>
-                    <p><strong>Genre:</strong> {genre}</p>
-                    <p><strong>Blurb:</strong></p>
-                    <p className="blurb">{blurb}</p>
-                </div>
-                <div className="claimedBookForm">
-                    {/* if isClaimed == null, display the form to claim the book */}
-                    {!capitalName && <ClaimBookForm bookclaim={setCapitalName} id={id}/> }
-                    {capitalName && <p><strong>Claimed by:&nbsp;</strong> {capitalName}</p>}
-                </div> 
+              <h1>{title}</h1>
+              <p><strong>Author:</strong> {author}</p>
+              <p><strong>Published:</strong> {year}</p>
+              <p><strong>Pages:</strong> {pageCount}</p>
+              <p><strong>Genre:</strong> {genre}</p>
+              <p><strong>Blurb:</strong></p>
+              <p className="blurb">{blurb}</p> 
+            </div>
         </div>
         <div className="display_container form">
-                
-        </div>
+                <div className="claimedBookForm">        
+                  {!capitalName && <ClaimBookForm bookclaim={setCapitalName} id={id}/> }
+                  {capitalName && <p><strong>Claimed by:&nbsp;</strong> {capitalName}</p>}
+                  {capitalName && <BookReturnForm bookclaim={setCapitalName} id={id}/>}
+                </div>     
         </div>
     )
 }
