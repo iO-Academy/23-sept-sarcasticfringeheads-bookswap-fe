@@ -27,12 +27,11 @@
 }
 .display_container.content p {
     font-size: 20px;
-    margin:0px;
     
 }
 
 .display_container.content p.blurb {
-    margin-top:-20px;
+    margin-top:-10px;
 }
 
 .display_container.content h1 {
@@ -61,15 +60,3 @@
     justify-content: center;
     margin-bottom: 0;
 }
-/* .claimedBookForm{
-    width: 250px;
-    height: 50px;
-    background-color: rgb(179, 159, 159);
-    border-radius: 5px;
-    padding: 10px;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 0;
-} */
