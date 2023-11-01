@@ -15,7 +15,7 @@ function ClaimBookForm({id, bookclaim}) {
             method: 'PUT',
             mode: 'cors',
             headers: {
-                "Content-Type": "application/json",
+                "Content-Type": "application/json", 'accept':'application/json'
             },
             body: JSON.stringify({
                 name: submitted_name,
