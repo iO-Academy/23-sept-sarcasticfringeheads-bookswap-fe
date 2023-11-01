@@ -56,12 +56,9 @@ function ClaimBookForm({id, bookclaim}) {
                     <label htmlFor="email">Email:  </label>
                     <input type="email" id='email' placeholder="email@email.com" value={email} onChange={(e) => setEmail(e.target.value)}></input>
                 </span>
-                    <input className="claimSubmit" type='submit' value='Claim'></input>
+                <input className="claimSubmit" type='submit' value='Claim'></input>
             </div>
-            
         </form>
-          
-       
     )
 }
 
