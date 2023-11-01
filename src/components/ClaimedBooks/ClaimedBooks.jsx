@@ -6,7 +6,6 @@ function ClaimedBooks() {
     const [books, setBooks] = useState ([])
     const [clickedBookId, setclickedBookId] = useState(null)
 
-
     useEffect (function() {
         fetch('https://book-swap-api.dev.io-academy.uk/api/books?claimed=1')
             .then(function (res) {
@@ -17,9 +16,7 @@ function ClaimedBooks() {
             })
     }, [])
 
-
     return (
-
         <div className='books-container'>
             {books.map(book => 
             <BookListing
