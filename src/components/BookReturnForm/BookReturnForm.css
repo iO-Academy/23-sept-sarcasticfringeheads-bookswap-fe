@@ -1,0 +1,23 @@
+.return-book-form{
+    width: 250px;
+    height: 150px;
+    background-color: rgb(179, 159, 159);
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    margin-top: 20px;
+}
+
+.return-book-form h2{
+    text-align: center;
+}
+
+.return-book-form #email{
+    border-radius: 5px;
+    border: none;
+}
+
+.return-book-form #submit{
+    border-radius: 5px;
+    margin-top: 3px;
+}

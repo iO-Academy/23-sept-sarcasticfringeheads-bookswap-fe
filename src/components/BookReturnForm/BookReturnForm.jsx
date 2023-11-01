@@ -1,4 +1,5 @@
 import { useState } from "react"
+import "./BookReturnForm.css"
 
 function BookReturnForm ({id, bookclaim}) {
     const [email, setEmail] = useState ('')
@@ -40,12 +41,12 @@ function BookReturnForm ({id, bookclaim}) {
 //  To make the book change from claimed to available?
 
     return (
-        <div>
+        <div className="return-book-form">
             <h2>Would you like to return this book?</h2>
             <form onSubmit={submit}>
                 <label htmlFor="Email" value={email}>Email</label>
                 <input type="email" id='email' onChange={setEmail}/>
-                <input type="submit" />
+                <input  id="submit" type="submit" />
             </form>
         </div>
     )
