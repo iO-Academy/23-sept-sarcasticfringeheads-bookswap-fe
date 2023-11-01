@@ -62,11 +62,9 @@ function SingleBookDetail () {
                   {/* if isClaimed == null, display the form to claim the book */}
                   {!capitalName && <ClaimBookForm bookclaim={setCapitalName} id={id}/> }
                   {capitalName && <p><strong>Claimed by:</strong> {capitalName}</p>}
-                </div>
-                <div className="claimedBookForm">
-                 {/* if isClaimed == null, display the form to claim the book */}
-                 {capitalName && <p><strong>Claimed by:</strong> {capitalName}</p>}
-                 {capitalName && <BookReturnForm />}
+                  {/* the opposite for returning */}
+                  {capitalName && <p><strong>Claimed by:</strong> {capitalName}</p>}
+                  {capitalName && <BookReturnForm bookclaim={setCapitalName} id={id}/>}
                 </div>
         </div>
         </div>

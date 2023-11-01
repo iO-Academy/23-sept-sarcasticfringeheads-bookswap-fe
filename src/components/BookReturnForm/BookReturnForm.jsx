@@ -1,37 +1,40 @@
 import { useState } from "react"
 
-function BookReturnForm ({id}) {
+function BookReturnForm ({id, bookclaim}) {
     const [email, setEmail] = useState ('')
 
-    //function to take what is typed in and save into the state
-    function returnBook (event) {
-        setEmail(event.target.value)
-    }
-
     function submit(event){
+        console.log('Email state variable: ', email, '     event.... value:', event.target.email.value)
         event.preventDefault()
-        console.log('submitted returned book!')
+        console.log('submitted returned book (attempt)!')
 
-        fetch('https://book-swap-api.dev.io-academy.uk/api/books/return' + id, {
+        fetch('https://book-swap-api.dev.io-academy.uk/api/books/return/' + id, {
+            method: "PUT",
             mode: 'cors',
             headers: {
                 "Content-Type": "application/json",
             },
-            method: "PUT" ,
             body: JSON.stringify({
-                email: email,
+                email: event.target.email.value,
             }),
         }) 
-        .then(function (res) {  
-        })
-        .then(function (data) {
-           if(res.status === 200){
-                console.log('Book successfully found')
-                return res.json()
+        .then((res) => {
+            if (res.ok) {
+                console.log('Return request submitted successfully.');
+                bookclaim(null)
+                // Successfully Claimed
             } else {
-                console.log('Book with Id ' + id + 'not found')
-            } 
+                console.error('Failed to submit Return request.');
+                // Error in Claiming
+            }
         })
+        .catch((error) => {
+            console.error('Error:', error);
+            // Some other error. issue apology.
+            console.log('something else went wrong with Returning')
+        });
+        
+
     }
 //Do we also need to input function where if successful change claimed=0??
 //  To make the book change from claimed to available?
@@ -41,7 +44,7 @@ function BookReturnForm ({id}) {
             <h2>Would you like to return this book?</h2>
             <form onSubmit={submit}>
                 <label htmlFor="Email" value={email}>Email</label>
-                <input type="email" onChange={returnBook}/>
+                <input type="email" id='email' onChange={setEmail}/>
                 <input type="submit" />
             </form>
         </div>
