@@ -3,8 +3,6 @@
     flex-direction: row;
     margin:30px;
     margin-top: 200px;
- 
-
 }
 
 .display_container.content {
@@ -24,6 +22,7 @@
     border-radius: 5px;
 
 }
+
 .display_container.content p {
     font-size: 20px;
 }

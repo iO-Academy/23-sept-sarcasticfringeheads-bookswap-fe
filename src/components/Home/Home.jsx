@@ -3,10 +3,8 @@ import { useEffect, useState } from "react"
 import BookListing from "../Booklisting/Booklisting"
 
 function Home() {
-    const [books, setBooks] = useState ([])
-    const [clickedBookId, setclickedBookId] = useState(null)
-
-
+    const [books, setBooks] = useState([])
+    
     useEffect (function() {
         fetch('https://book-swap-api.dev.io-academy.uk/api/books')
             .then(function (res) {
@@ -27,7 +25,7 @@ function Home() {
                 genre={book.genre.name} 
                 id={book.id} 
                 key={book.id}
-                setClickedBookId={setclickedBookId}/>    
+                />    
             )}
         </div>
     )
