@@ -52,20 +52,24 @@ function ClaimBookForm({id, bookclaim}) {
     }
 
     return (
-        <div> 
-          <div className="claimFormContainer">
-                <form className='claim-book' onSubmit={claimAttempt}>
-                    <h3>Claim this book:</h3>
-                    <label htmlFor="name" value={name} onChange={setName}>Name:</label>
-                    <input type="text" id='name' placeholder="name"></input>
-                    <br />
-                    <label htmlFor="email"  value={email} onChange={setEmail}>Email:</label>
-                    <input type="email" id='email' placeholder="email@email.com"></input>
-                    <br />
-                    <input className="claimSumbit" type='submit' value='Claim'></input>
-                </form>
-          </div>
-        </div>
+
+        <form className='claim-book' onSubmit={claimAttempt}>
+                <div className="claim-book-details">
+            <h3>Claim this book:</h3>
+            <span>
+                <label htmlFor="name" value={name} onChange={setName}>Name:  </label>
+                <input type="text" id='name' placeholder="name"></input>
+            </span>
+            <span>
+                <label htmlFor="email"  value={email} onChange={setEmail}>Email:  </label>
+                <input type="email" id='email' placeholder="email@email.com"></input>
+            </span>
+                <input className="claimSubmit" type='submit' value='Claim'></input>
+            </div>
+            
+        </form>
+          
+       
     )
 }
 
