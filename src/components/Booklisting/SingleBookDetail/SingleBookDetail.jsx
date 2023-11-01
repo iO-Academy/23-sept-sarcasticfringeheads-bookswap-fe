@@ -2,6 +2,7 @@ import "./SingleBookDetail.css"
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import ClaimBookForm from "../../ClaimBookForm/ClaimBookForm"
+import BookReturnForm from "../../BookReturnForm/BookReturnForm"
 
 
 function SingleBookDetail () {
@@ -64,8 +65,8 @@ function SingleBookDetail () {
                 </div>
                 <div className="claimedBookForm">
                  {/* if isClaimed == null, display the form to claim the book */}
-                 {!capitalName && <ClaimBookForm bookclaim={setCapitalName} id={id}/> }
                  {capitalName && <p><strong>Claimed by:</strong> {capitalName}</p>}
+                 {capitalName && <BookReturnForm />}
                 </div>
         </div>
         </div>
