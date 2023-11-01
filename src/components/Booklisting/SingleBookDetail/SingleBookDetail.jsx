@@ -42,27 +42,29 @@ function SingleBookDetail () {
     }, [])
     
     return (
-
-        <div className= "display_container">
-            <div className= "display_container image">
-              <img src={image} alt={title} />
+        <div>
+            <div className= "display_container">
+                <div className= "display_container image">
+                    <img src={image} alt={title} />
+                </div>
+                <div className= "display_container content">
+                    <h1>{title}</h1>
+                    <p><strong>Author:</strong> {author}</p>
+                    <p><strong>Published:</strong> {year}</p>
+                    <p><strong>Pages:</strong> {pageCount}</p>
+                    <p><strong>Genre:</strong> {genre}</p>
+                    <p><strong>Blurb:</strong></p>
+                    <p className="blurb">{blurb}</p>
+                    <div className="claimedBookForm">        
+                        {!capitalName && <ClaimBookForm bookclaim={setCapitalName} id={id}/> }
+                        {capitalName && <p><strong>Claimed by:&nbsp;</strong> {capitalName}</p>}
+                        {capitalName && <BookReturnForm bookclaim={setCapitalName} id={id}/>}
+                    </div>   
+                </div>
             </div>
-            <div className= "display_container content">
-              <h1>{title}</h1>
-              <p><strong>Author:</strong> {author}</p>
-              <p><strong>Published:</strong> {year}</p>
-              <p><strong>Pages:</strong> {pageCount}</p>
-              <p><strong>Genre:</strong> {genre}</p>
-              <p><strong>Blurb:</strong></p>
-              <p className="blurb">{blurb}</p> 
+            <div className="display_container form">
+                      
             </div>
-        </div>
-        <div className="display_container form">
-                <div className="claimedBookForm">        
-                  {!capitalName && <ClaimBookForm bookclaim={setCapitalName} id={id}/> }
-                  {capitalName && <p><strong>Claimed by:&nbsp;</strong> {capitalName}</p>}
-                  {capitalName && <BookReturnForm bookclaim={setCapitalName} id={id}/>}
-                </div>     
         </div>
     )
 }

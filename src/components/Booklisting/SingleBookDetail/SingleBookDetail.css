@@ -27,11 +27,12 @@
 }
 .display_container.content p {
     font-size: 20px;
+    margin:0px;
     
 }
 
 .display_container.content p.blurb {
-    margin-top:-10px;
+    margin-top:-20px;
 }
 
 .display_container.content h1 {
