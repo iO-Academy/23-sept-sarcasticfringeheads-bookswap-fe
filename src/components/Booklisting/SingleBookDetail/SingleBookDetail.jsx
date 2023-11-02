@@ -4,6 +4,8 @@ import { useParams } from "react-router-dom"
 import ClaimBookForm from "../../ClaimBookForm/ClaimBookForm"
 import BookReturnForm from "../../BookReturnForm/BookReturnForm"
 import BookReviews from "../../BookReviews/BookReviews"
+import BookReviewPage from "../../BookReviewPage/BookReviewPage"
+// import BookReviewPage from "../../BookReviewPage/BookReviewPage"
 
 
 function SingleBookDetail () {
@@ -17,6 +19,10 @@ function SingleBookDetail () {
     const [isClaimed, setIsClaimed] = useState(null) // currently redundant but important to not change in case capitilisation is done through css later 
     const {id} = useParams()
     const [capitalName, setCapitalName] = useState(null)
+    const [reviews, setReviews] = useState([])
+
+    //Store all reviews in a state reivews setReviews
+    //separate component to 
 
     useEffect (function(){
         fetch('https://book-swap-api.dev.io-academy.uk/api/books/' +id)
@@ -32,7 +38,8 @@ function SingleBookDetail () {
             setImage(bookData.data.image)
             setPageCount(bookData.data.page_count)
             setGenre(bookData.data.genre.name)
-            
+            setReviews(bookData.data.reviews)
+
             let claimed = (bookData.data.claimed_by_name) //if claimed_by_name returns a string (not null
             if (claimed) { 
                 setCapitalName (claimed.charAt(0).toUpperCase() + claimed.slice(1)) // set capitalName to capitalised version of claimed
@@ -60,7 +67,6 @@ function SingleBookDetail () {
                         {!capitalName && <ClaimBookForm bookclaim={setCapitalName} id={id}/> }
                         {capitalName && <p><strong>Claimed by:&nbsp;</strong> {capitalName}</p>}
                         {capitalName && <BookReturnForm bookclaim={setCapitalName} id={id}/>}
-
                     </div>   
                 </div>
             </div>
@@ -70,6 +76,21 @@ function SingleBookDetail () {
             <div className="display_container form">
                       
             </div>
+
+            <section>
+                {reviews.map(review =>
+                    <BookReviewPage
+                        key={id}
+                        id={review.id}
+                        name={review.name}
+                        rating={review.rating}
+                        review={review.review}
+                    />
+                )}
+               
+                
+            
+            </section>
         </div>
     )
 }
