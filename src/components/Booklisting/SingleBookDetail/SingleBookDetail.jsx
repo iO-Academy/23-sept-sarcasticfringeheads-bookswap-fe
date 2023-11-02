@@ -57,7 +57,7 @@ function SingleBookDetail () {
             let review_average = total / review_count
             setReviewAverage(Math.round(review_average))
         })
-    }, [])
+    }, [reviews])
     
     return (
         <div>
@@ -83,7 +83,7 @@ function SingleBookDetail () {
             </div>
             <div className="book-review-container">
             <div>
-                <BookReviews id={id}/>
+                <BookReviews reviews={reviews} setReviews={setReviews} id={id}/>
             </div>
                 <section>
                     <h1 className="review-title">Reviews</h1>
@@ -96,9 +96,7 @@ function SingleBookDetail () {
                             review={review.review}
                         />
                     )}
-                 
                 </section>
-
             </div>
         </div>
     )
