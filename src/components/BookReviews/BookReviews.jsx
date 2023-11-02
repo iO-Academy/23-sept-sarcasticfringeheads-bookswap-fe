@@ -5,11 +5,23 @@ function BookReviews({id}){
         const[name, setName] = useState('')
         const[rating, setRating] = useState('')
         const[review, setReview] = useState('')
-        
 
     function submitReview (event){
-        event.preventDefault()
-        return
+        event.preventDefault(
+        )
+        fetch('https://book-swap-api.dev.io-academy.uk/api/reviews', {
+            method: 'POST',
+            mode: 'cors',
+            headers: {
+                "Content-Type": "application/json", "accept": "application/json", 
+            },
+            body: JSON.stringify({
+                'name': name,
+                'rating':rating,
+                'review': review,
+                'book_id': id,
+            }),
+        })
     }
 
     function changeName (event){
@@ -23,6 +35,7 @@ function BookReviews({id}){
     function ChangeReview (event){
         setReview(event.target.value)
     }
+
 
     return(
             <>
@@ -51,7 +64,7 @@ function BookReviews({id}){
                 <br />
                 <br />
             <label className="review">Review:</label>
-            <textarea id='review' placeholder='Review' maxLength='225' onChange={ChangeReview}></textarea> 
+            <textarea id='review' placeholder='Review' onChange={ChangeReview}></textarea> 
             <span>{review}</span>
                 <br />
                 <br />

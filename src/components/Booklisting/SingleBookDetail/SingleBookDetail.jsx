@@ -60,15 +60,13 @@ function SingleBookDetail () {
                         {!capitalName && <ClaimBookForm bookclaim={setCapitalName} id={id}/> }
                         {capitalName && <p><strong>Claimed by:&nbsp;</strong> {capitalName}</p>}
                         {capitalName && <BookReturnForm bookclaim={setCapitalName} id={id}/>}
-
                     </div>   
                 </div>
             </div>
             <div>
                 <BookReviews id={id}/>
             </div>
-            <div className="display_container form">
-                      
+            <div className="display_container form">         
             </div>
         </div>
     )
