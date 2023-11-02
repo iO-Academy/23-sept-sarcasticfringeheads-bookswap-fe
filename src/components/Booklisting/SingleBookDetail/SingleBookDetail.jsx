@@ -57,7 +57,7 @@ function SingleBookDetail () {
             let review_average = total / review_count
             setReviewAverage(Math.round(review_average))
         })
-    }, [reviews])
+    }, [])
     
     return (
         <div>

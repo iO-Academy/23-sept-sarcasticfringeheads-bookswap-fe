@@ -35,13 +35,12 @@ function BookReviews({id, reviews, setReviews}){
                     'id' : Math.floor(Math.random() * 1000),
                 })
                 setReviews(new_reviews)
-                console.log(reviews)
-                // window.location.reload()
+                // **Bandaid fix as state change of Reviews isn't currently being re-rendered in the .map (in SingleBookDetail component)**
+                window.location.reload()
             } 
             else {
                 // Get the error message from JSON and put it in errormessage state variable.
                 response.json().then(function (response_json) {
-                    console.log(response_json.message)
                     setIsError(true)
                     setErrorMessage(response_json.message)
                 });
