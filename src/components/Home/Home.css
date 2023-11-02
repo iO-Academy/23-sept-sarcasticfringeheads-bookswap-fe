@@ -11,10 +11,11 @@
 .welcome {
         position: relative;
         display: flex;
+        flex-wrap: wrap;
         flex-direction: column;
         justify-content: space-between;
         gap: 2px;
-        align-content: center;
+        align-content: flex-start;
         align-items: flex-start;
         top: 0;
         left:0;
@@ -30,14 +31,18 @@
 
 .welcome h1 {
     font-size: 70px;
-    margin-top: 150px;
+    margin-top: 180px;
     margin-bottom:0px;
+    text-shadow: 3px 3px 9px rgba(204, 204, 204, 1);
+
 }
 
 .welcome h2 {
     font-size: 50px;
     margin-top: -10px;
     margin-bottom:70px;
+    text-shadow: 3px 3px 9px rgba(204, 204, 204, 1);
+
 }
 
 .welcome h3 {

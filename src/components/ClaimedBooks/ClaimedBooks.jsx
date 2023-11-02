@@ -38,6 +38,13 @@ function ClaimedBooks() {
 
     return (
         <>
+
+        <div className="welcome">
+            <h1>Claim a book</h1>
+            <h3>Choose a book below, enter your name and email to add the book to your bookshelf</h3>
+            <span></span>
+        </div> 
+
         <div className="filter">
             <label >Filter by genre:</label>
             <div className="content-select">
@@ -49,7 +56,7 @@ function ClaimedBooks() {
             </div>
         </div>
       
-        <div className='books-container'>
+        <div className ='books-container'>
             {books.map(book => 
             <BookListing
             title={book.title} 

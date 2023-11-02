@@ -38,11 +38,9 @@ function Home() {
     return (
         <>
            <div className="welcome">
-            <h1>Welcome to </h1>
-            <h2>Book Swap</h2>
-            <h3>Checkout available books, whats claimed and add a book</h3>
-            <span></span>
-            
+                <h1>Welcome to Book Swap </h1>
+                <h3>Checkout available books, check what's claimed or add a book to the shelf</h3>
+                <span></span>
             </div> 
             
     
