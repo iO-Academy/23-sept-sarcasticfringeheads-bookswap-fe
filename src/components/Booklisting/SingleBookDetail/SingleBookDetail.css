@@ -60,3 +60,9 @@
     justify-content: center;
     margin-bottom: 0;
 }
+
+@media screen and (max-width: 800px){
+    .display_container {
+        flex-direction: column;
+    }
+}
