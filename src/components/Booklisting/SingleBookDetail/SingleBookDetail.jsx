@@ -56,9 +56,9 @@ function SingleBookDetail () {
                     <p><strong>Blurb:</strong></p>
                     <p className="blurb">{blurb}</p>
                     <div className="claimedBookForm">        
-                        {!capitalName && <ClaimBookForm bookclaim={setCapitalName} id={id}/> }
+                        {!capitalName && <ClaimBookForm bookClaim={setCapitalName} id={id}/> }
                         {capitalName && <p><strong>Claimed by:&nbsp;</strong> {capitalName}</p>}
-                        {capitalName && <BookReturnForm bookclaim={setCapitalName} id={id}/>}
+                        {capitalName && <BookReturnForm bookClaim={setCapitalName} id={id}/>}
                     </div>   
                 </div>
             </div>
@@ -68,4 +68,5 @@ function SingleBookDetail () {
         </div>
     )
 }
+
 export default SingleBookDetail

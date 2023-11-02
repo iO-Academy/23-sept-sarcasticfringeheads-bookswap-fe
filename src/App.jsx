@@ -10,6 +10,7 @@ import AddBook from './components/AddBook/AddBook'
 function App() {
   return (
    <BrowserRouter>
+<<<<<<< HEAD
       <Nav />
         <Routes>
             <Route path='/' element={<Home />} />
@@ -18,6 +19,15 @@ function App() {
             <Route path='/addabook' element={<AddBook />} />
             <Route path='*' element={<Error />} />
         </Routes>
+=======
+    <Nav />
+    <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/books/claimed' element={<ClaimedBooks />} />
+        <Route path='/books/:id' element={<SingleBookDetail />} />
+        <Route path='*' element={<Error />} />
+      </Routes>
+>>>>>>> main
    </BrowserRouter>
   )
 }
