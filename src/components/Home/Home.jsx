@@ -4,8 +4,6 @@ import BookListing from "../Booklisting/Booklisting"
 
 function Home() {
     const [books, setBooks] = useState ([])
-    const [clickedBookId, setclickedBookId] = useState(null)
-
 
     useEffect (function() {
         fetch('https://book-swap-api.dev.io-academy.uk/api/books?claimed=0')
@@ -26,8 +24,7 @@ function Home() {
                 image={book.image} 
                 genre={book.genre.name} 
                 id={book.id} 
-                key={book.id}
-                setClickedBookId={setclickedBookId}/>    
+                key={book.id}/>    
             )}
         </div>
     )
