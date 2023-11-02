@@ -1,0 +1,57 @@
+.title{
+    text-align: left;
+    font-size: xx-large;
+    margin-left: 35px;
+    margin-top: 40px;
+}
+
+
+.reviewbook{
+    width: 410px;
+    background-color: rgb(179, 159, 159);
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    margin-left: 40px;
+}
+.reviewbook h2{
+    text-align: left;
+    font-size: x-large;
+}
+
+.claimSubmit{
+    border-radius: 5px;
+    border: none;
+    margin-top: 8px;
+    width: 100%;
+    padding: 5px;
+}
+
+.reviewbook textarea{
+    resize: vertical;
+    border: none;
+    margin-left: 10px;
+}
+
+.review{
+    border-radius: 2px;
+    border: none;
+    margin-left: 4px;
+    font-size: large;
+}
+
+#score{
+    border: none;
+    margin-left: 17px;
+    width: 180px;
+}
+
+#name-review{
+    border: none;
+    margin-left: 21px;
+    width: 180px;
+}
+
+#id{
+    text-wrap: wrap;
+}
