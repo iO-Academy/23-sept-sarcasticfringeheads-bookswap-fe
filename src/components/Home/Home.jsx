@@ -37,8 +37,14 @@ function Home() {
    
     return (
         <>
+           <div className="welcome">
+
+            
+            </div> 
+            
+            
             <div className="filter">
-                <label >Genre: </label>
+                <label > Filter by genre:</label>
             
                 <select id='addgenre' value={genre} onChange={(e) => setGenre(e.target.value)}>
                     <option value={''}></option>

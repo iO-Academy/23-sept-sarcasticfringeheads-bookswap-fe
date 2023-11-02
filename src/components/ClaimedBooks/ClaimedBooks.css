@@ -2,7 +2,7 @@
     position:relative;
     display: flex;
     flex-direction: row;
-    justify-content:flex-start;
+    justify-content:center;
     align-items: center;
     padding:10px;
     gap: 20px;
@@ -17,11 +17,10 @@
     height:30px;
 }
 
-label {
+.filter label {
 font-size: 20px ;
 color: #000000;
 margin-right:-10px;
-margin-left:49px;
 font-weight: bold;
 
 }

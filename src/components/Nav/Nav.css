@@ -12,6 +12,7 @@ nav {
     background: rgba(0, 0, 0);
     padding: 10px;
     max-height: 100px;
+    z-index: 1;
 }
 
 nav ul {
