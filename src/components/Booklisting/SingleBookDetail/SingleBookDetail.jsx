@@ -19,8 +19,9 @@ function SingleBookDetail () {
     const [isClaimed, setIsClaimed] = useState(null) // currently redundant but important to not change in case capitilisation is done through css later 
     const {id} = useParams()
     const [capitalName, setCapitalName] = useState(null)
-    const [reviews, setReviews] = useState([])
 
+    const [reviews, setReviews] = useState([])
+    const [reviewAverage, setReviewAverage] = useState(0)
     //Store all reviews in a state reivews setReviews
     //separate component to 
 
@@ -38,7 +39,8 @@ function SingleBookDetail () {
             setImage(bookData.data.image)
             setPageCount(bookData.data.page_count)
             setGenre(bookData.data.genre.name)
-            setReviews(bookData.data.reviews)
+            let myReviews = bookData.data.reviews
+            setReviews(myReviews)
 
             let claimed = (bookData.data.claimed_by_name) //if claimed_by_name returns a string (not null
             if (claimed) { 
@@ -46,6 +48,16 @@ function SingleBookDetail () {
             }
 
             setIsClaimed(claimed) // currently redundant but important to not change in case capitilisation is done through css later 
+
+            let total = 0;
+            let review_count = 0;
+            myReviews.forEach(function (review) {
+                total += parseInt(review.rating)
+                review_count ++
+                
+            })
+            let review_average = total / review_count
+                setReviewAverage(Math.round(review_average))
         })
     }, [])
     
@@ -57,6 +69,7 @@ function SingleBookDetail () {
                 </div>
                 <div className= "display_container content">
                     <h1>{title}</h1>
+                    <h3>{reviewAverage}/5</h3>
                     <p><strong>Author:</strong> {author}</p>
                     <p><strong>Published:</strong> {year}</p>
                     <p><strong>Pages:</strong> {pageCount}</p>
