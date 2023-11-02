@@ -33,3 +33,8 @@
     border: none;
     margin-left: 4px;
 }
+
+span.errormessage {
+    color: red;
+    padding: 0px;
+}

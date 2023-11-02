@@ -12,12 +12,12 @@
     text-align: center;
 }
 
-.return-book-form #email{
+.return-book-form #emailReturn{
     border-radius: 5px;
     border: none;
 }
 
-.return-book-form #submit{
+.return-book-form #submitReturn{
     border-radius: 5px;
     margin-top: 3px;
 }
