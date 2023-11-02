@@ -1,15 +1,28 @@
 import { useState } from "react"
 import './BookReviews.css'
+import BookReviewPage from "../BookReviewPage/BookReviewPage"
 
 function BookReviews({id}){
         const[name, setName] = useState('')
         const[rating, setRating] = useState('')
         const[review, setReview] = useState('')
-        
 
     function submitReview (event){
-        event.preventDefault()
-        return
+        event.preventDefault(
+        )
+        fetch('https://book-swap-api.dev.io-academy.uk/api/reviews', {
+            method: 'POST',
+            mode: 'cors',
+            headers: {
+                "Content-Type": "application/json", "accept": "application/json", 
+            },
+            body: JSON.stringify({
+                'name': name,
+                'rating':rating,
+                'review': review,
+                'book_id': id,
+            }),
+        })
     }
 
     function changeName (event){
@@ -24,6 +37,7 @@ function BookReviews({id}){
         setReview(event.target.value)
     }
 
+
     return(
             <>
             <h2 className="title">Come and Review the Book?</h2>
@@ -34,7 +48,7 @@ function BookReviews({id}){
         <div className='review-form'>
                 
             <label className="review">Name:</label>
-            <input type="text" id='name-review' placeholder="Name" onChange={changeName}></input>
+            <input type="text" id='name-review' placeholder="name" onChange={changeName}></input>
             {name}
                 <br />
                 <br />
@@ -51,7 +65,7 @@ function BookReviews({id}){
                 <br />
                 <br />
             <label className="review">Review:</label>
-            <textarea id='review' placeholder='Review' maxLength='225' onChange={ChangeReview}></textarea> 
+            <textarea id='review' placeholder='Review' onChange={ChangeReview}></textarea> 
             <span>{review}</span>
                 <br />
                 <br />

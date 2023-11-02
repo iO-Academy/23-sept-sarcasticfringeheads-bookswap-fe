@@ -70,27 +70,25 @@ function SingleBookDetail () {
                     </div>   
                 </div>
             </div>
-            <div>
-                <BookReviews id={id}/>
-            </div>
-            <div className="display_container form">
-                      
-            </div>
-
-            <section>
-                {reviews.map(review =>
-                    <BookReviewPage
-                        key={id}
-                        id={review.id}
-                        name={review.name}
-                        rating={review.rating}
-                        review={review.review}
-                    />
-                )}
-               
+            <div className="book-review-container">
+                <div>
+                    <BookReviews id={id}/>
+                </div>
+                <section>
+                    {reviews.map(review =>
+                        <BookReviewPage
+                            key={id}
+                            id={review.id}
+                            name={review.name}
+                            rating={review.rating}
+                            review={review.review}
+                        />
+                    )}
                 
-            
-            </section>
+                    
+                
+                </section>
+            </div>
         </div>
     )
 }
