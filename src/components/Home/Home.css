@@ -9,6 +9,41 @@
 }
 
 .welcome {
-    margin-top:200px;
-    color: black;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 2px;
+        align-content: center;
+        align-items: flex-start;
+        top: 0;
+        left:0;
+        right: 0;
+        width: 100%;
+        background: rgb(234, 234, 234);
+        padding-left: 400px;
+        height: 400px;
+        z-index: -1;
+        box-shadow: 0 4px 6px -6px #222;
+}
+
+
+.welcome h1 {
+    font-size: 70px;
+    margin-top: 150px;
+    margin-bottom:0px;
+}
+
+.welcome h2 {
+    font-size: 50px;
+    margin-top: -10px;
+    margin-bottom:70px;
+}
+
+.welcome h3 {
+    font-size: 22px;
+    font-weight:lighter;
+    margin-bottom: 50px;
+    margin-top: -40px;
+
 }
