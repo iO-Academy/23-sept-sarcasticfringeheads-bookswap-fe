@@ -4,8 +4,6 @@ import BookListing from "../Booklisting/Booklisting"
 
 function Home() {
     const [books, setBooks] = useState ([])
-    const [clickedBookId, setclickedBookId] = useState(null)
-    const [genre, setGenre] = useState(null)
 
 
 
@@ -29,7 +27,7 @@ function Home() {
                 genre={book.genre.name} 
                 id={book.id} 
                 key={book.id}
-                setClickedBookId={setclickedBookId}/>    
+                />    
             )}
         </div>
     )

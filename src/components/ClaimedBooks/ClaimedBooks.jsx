@@ -24,7 +24,6 @@ function ClaimedBooks() {
     useEffect (function() {
         let url = 'https://book-swap-api.dev.io-academy.uk/api/books?claimed=1'
         if (genre != '') {
-            console.log(genre)
             url = 'https://book-swap-api.dev.io-academy.uk/api/books?claimed=1' + '&genre=' + genre
         }
 
@@ -35,24 +34,20 @@ function ClaimedBooks() {
             .then(function (bookData) {
                 setBooks(bookData.data)
             })
-    }, [setGenre])
+    }, [genre])
 
     return (
-       
         <>
         <div className="filter">
-        <label >Genre: </label>
+            <label >Genre: </label>
         
-        <select id='addgenre' value={genre} onChange={(e) => setGenre(e.target.value)}>
-                        
-                        <option value={null}></option>
-                        {genresListLength > 0 && genresList.map(list_item => 
-                            <option key={list_item.id} value={list_item.id}>{list_item.name}</option>)}
-
-                    </select>
+            <select id='addgenre' value={genre} onChange={(e) => setGenre(e.target.value)}>
+                <option value={''}></option>
+                {genresListLength > 0 && genresList.map(list_item => 
+                <option key={list_item.id} value={list_item.id}>{list_item.name}</option>)}
+            </select>
         </div>
       
-
         <div className='books-container'>
             {books.map(book => 
             <BookListing
