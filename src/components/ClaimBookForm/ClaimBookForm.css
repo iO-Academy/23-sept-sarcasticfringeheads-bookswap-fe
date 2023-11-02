@@ -1,0 +1,40 @@
+
+.claim-book{
+    width: 250px;
+    height: 150px;
+    background-color: rgb(179, 159, 159);
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.claim-book-details{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-left: -35px;
+    
+}
+
+.claimSubmit{
+    margin-top: 8px;
+    width: 40%;
+    border-radius: 5px;
+    border: none;
+}
+
+.claim-book-details h3{
+    margin-top: -5px;
+    
+}
+
+#name, #email{
+    border-radius: 2px;
+    border: none;
+    margin-left: 4px;
+}
+
+span.errormessage {
+    color: red;
+    padding: 0px;
+}
