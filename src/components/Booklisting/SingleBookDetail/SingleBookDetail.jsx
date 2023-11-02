@@ -69,7 +69,7 @@ function SingleBookDetail () {
                 </div>
                 <div className= "display_container content">
                     <h1>{title}</h1>
-                    <h3>{reviewAverage}/5</h3>
+                    <h3>{reviewAverage}/5 Score &#9733;</h3>
                     <p><strong>Author:</strong> {author}</p>
                     <p><strong>Published:</strong> {year}</p>
                     <p><strong>Pages:</strong> {pageCount}</p>
