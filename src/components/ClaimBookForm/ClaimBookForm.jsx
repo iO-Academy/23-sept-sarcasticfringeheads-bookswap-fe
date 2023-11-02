@@ -1,7 +1,7 @@
 import { useState } from "react"
 import "./ClaimBookForm.css"
 
-function ClaimBookForm({id, bookclaim}) {
+function ClaimBookForm({id, bookClaim}) {
     
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
@@ -27,7 +27,7 @@ function ClaimBookForm({id, bookclaim}) {
                 setIsError(false)
                 // Bookclaim is a setCapitalName passed down as a prop. 
                 // i.e if claim is successful change the state of capitalName to the name that was submitted
-                bookclaim(name)
+                bookClaim(name)
 
             } 
             else {
@@ -53,8 +53,8 @@ function ClaimBookForm({id, bookclaim}) {
                     <input type="text" id='name' placeholder="name" value={name} onChange={(e) => setName(e.target.value)}></input>
                 </span>
                 <span>
-                    <label htmlFor="email">Email:  </label>
-                    <input type="email" id='email' placeholder="email@email.com" value={email} onChange={(e) => setEmail(e.target.value)}></input>
+                    <label htmlFor="emailClaim">Email:  </label>
+                    <input type="email" id='emailClaim' placeholder="email@email.com" value={email} onChange={(e) => setEmail(e.target.value)}></input>
                 </span>
                 <input className="claimSubmit" type='submit' value='Claim'></input>
             </div>
