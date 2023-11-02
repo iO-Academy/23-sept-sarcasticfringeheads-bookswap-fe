@@ -39,13 +39,14 @@ function ClaimedBooks() {
     return (
         <>
         <div className="filter">
-            <label >Genre: </label>
-        
-            <select id='addgenre' value={genre} onChange={(e) => setGenre(e.target.value)}>
-                <option value={''}></option>
-                {genresListLength > 0 && genresList.map(list_item => 
-                <option key={list_item.id} value={list_item.id}>{list_item.name}</option>)}
-            </select>
+            <label >Filter by genre:</label>
+            <div className="content-select">
+                <select id='addgenre' value={genre} onChange={(e) => setGenre(e.target.value)}>
+                    <option value={''}></option>
+                    {genresListLength > 0 && genresList.map(list_item => 
+                    <option className="option" key={list_item.id} value={list_item.id}>{list_item.name}</option>)}
+                </select>
+            </div>
         </div>
       
         <div className='books-container'>

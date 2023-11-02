@@ -1,4 +1,29 @@
 .filter {
-    background-color: beige;
-    margin-top: 200px;
+    position:relative;
+    display: flex;
+    flex-direction: row;
+    justify-content:flex-start;
+    align-items: center;
+    padding:10px;
+    gap: 20px;
+    left:0px;
+    margin-top:150px;
+    height:50px;
 }
+
+#addgenre {
+    border-radius: 6px;
+    width:200px;
+    height:30px;
+}
+
+label {
+font-size: 20px ;
+color: #000000;
+margin-right:-10px;
+margin-left:49px;
+font-weight: bold;
+
+}
+
+

@@ -1,7 +1,9 @@
 .books-container {
+    position:absolute;
     display: flex;
     flex-wrap: wrap;
+    width:100%;
     gap: 10px;
     justify-content: space-around;
-    margin-top: 300px;
+    margin-top: 30px;
 }
