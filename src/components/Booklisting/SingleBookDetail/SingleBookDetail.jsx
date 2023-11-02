@@ -1,6 +1,7 @@
 import "./SingleBookDetail.css"
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
+import ClaimBookForm from "../../ClaimBookForm/ClaimBookForm"
 
 
 function SingleBookDetail () {
@@ -11,7 +12,9 @@ function SingleBookDetail () {
     const [year, setYear] = useState ('')
     const [author, setAuthor] = useState('')
     const [genre, setGenre] = useState('')
+    const [isClaimed, setIsClaimed] = useState(null) // currently redundant but important to not change in case capitilisation is done through css later 
     const {id} = useParams()
+    const [capitalName, setCapitalName] = useState(null)
 
     useEffect (function(){
         fetch('https://book-swap-api.dev.io-academy.uk/api/books/' +id)
@@ -27,6 +30,13 @@ function SingleBookDetail () {
             setImage(bookData.data.image)
             setPageCount(bookData.data.page_count)
             setGenre(bookData.data.genre.name)
+            
+            let claimed = (bookData.data.claimed_by_name) //if claimed_by_name returns a string (not null
+            if (claimed) { 
+                setCapitalName (claimed.charAt(0).toUpperCase() + claimed.slice(1)) // set capitalName to capitalised version of claimed
+            }
+
+            setIsClaimed(claimed) // currently redundant but important to not change in case capitilisation is done through css later 
         })
     }, [])
     
@@ -36,15 +46,26 @@ function SingleBookDetail () {
               <img src={image} alt={title} />
             </div>
             <div className= "display_container content">
-              <h1>{title}</h1>
-              <p><strong>Author:</strong> {author}</p>
-              <p><strong>Published:</strong> {year}</p>
-              <p><strong>Pages:</strong> {pageCount}</p>
-              <p><strong>Genre:</strong> {genre}</p>
-              <p><strong>Blurb:</strong></p>
-              <p className="blurb">{blurb}</p>
+               <div> 
+                    <h1>{title}</h1>
+                    <p><strong>Author:</strong> {author}</p>
+                    <p><strong>Published:</strong> {year}</p>
+                    <p><strong>Pages:</strong> {pageCount}</p>
+                    <p><strong>Genre:</strong> {genre}</p>
+                    <p><strong>Blurb:</strong></p>
+                    <p className="blurb">{blurb}</p>
+                </div>
+                <div className="claimedBookForm">
+                    {/* if isClaimed == null, display the form to claim the book */}
+                    {!capitalName && <ClaimBookForm bookclaim={setCapitalName} id={id}/> }
+                    {capitalName && <p><strong>Claimed by:&nbsp;</strong> {capitalName}</p>}
+                </div> 
+            </div>
+            <div className="display_container form">
+                
             </div>
         </div>
     )
 }
+
 export default SingleBookDetail
