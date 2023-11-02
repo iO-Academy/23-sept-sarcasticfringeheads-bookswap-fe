@@ -13,6 +13,7 @@ function ClaimedBooks() {
         let url = 'https://book-swap-api.dev.io-academy.uk/api/books?claimed=1'
         if (genre != null) {
             url = url + '&genre=' + genre
+            setGenre(url)
         }
 
         fetch(url)
@@ -27,15 +28,18 @@ function ClaimedBooks() {
     return (
        
         <>
-        <select className = 'filter'>
-            <option>{bookData}</option>
-
-
-        </select>
+        <div className="filter">
+        <label >Genre: </label>
+                <select name='genre' id="genre" onChange={ClaimedBooks}>
+                    <option value='0'>All</option>
+                    <option value='0'>Historical</option>
+                    <option value='1'>Non-Fiction</option>
+                    <option value='2'>Romance</option>
+                    <option value='3'>Thriller</option>
+                </select>
+        </div>
       
-        
-        
-        
+
         <div className='books-container'>
             {books.map(book => 
             <BookListing
