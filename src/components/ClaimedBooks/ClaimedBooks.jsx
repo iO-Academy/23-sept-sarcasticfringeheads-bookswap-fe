@@ -17,13 +17,13 @@ function ClaimedBooks() {
     return (
         <div className='books-container'>
             {books.map(book => 
-            <BookListing
-            title={book.title} 
-            author={book.author} 
-            image={book.image} 
-            genre={book.genre.name} 
-            id={book.id} 
-            key={book.id}/>    
+                <BookListing
+                    title={book.title}
+                    author={book.author}
+                    image={book.image}
+                    genre={book.genre.name}
+                    id={book.id}
+                    key={book.id}/>
             )}
         </div>
     )
