@@ -42,7 +42,6 @@ function SingleBookDetail () {
     }, [])
     
     return (
-
         <div className= "display_container">
             <div className= "display_container image">
               <img src={image} alt={title} />
@@ -59,11 +58,12 @@ function SingleBookDetail () {
         </div>
         <div className="display_container form">
                 <div className="claimedBookForm">        
-                  {!capitalName && <ClaimBookForm bookclaim={setCapitalName} id={id}/> }
-                  {capitalName && <p><strong>Claimed by:&nbsp;</strong> {capitalName}</p>}
-                  {capitalName && <BookReturnForm bookclaim={setCapitalName} id={id}/>}
-                </div>     
+                    {!capitalName && <ClaimBookForm bookclaim={setCapitalName} id={id}/> }
+                    {capitalName && <p><strong>Claimed by:&nbsp;</strong> {capitalName}</p>}
+                    {capitalName && <BookReturnForm bookclaim={setCapitalName} id={id}/>}
+                </div>    
         </div>
     )
 }
+
 export default SingleBookDetail
