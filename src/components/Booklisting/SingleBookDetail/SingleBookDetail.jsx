@@ -3,10 +3,7 @@ import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import ClaimBookForm from "../../ClaimBookForm/ClaimBookForm"
 import BookReturnForm from "../../BookReturnForm/BookReturnForm"
-import BookReviews from "../../BookReviews/BookReviews"
 import BookReviewPage from "../../BookReviewPage/BookReviewPage"
-// import BookReviewPage from "../../BookReviewPage/BookReviewPage"
-
 
 function SingleBookDetail () {
     const [title, setTitle] = useState('')
@@ -57,14 +54,14 @@ function SingleBookDetail () {
                 
             })
             let review_average = total / review_count
-                setReviewAverage(Math.round(review_average))
+            setReviewAverage(Math.round(review_average))
         })
     }, [])
     
     return (
         <div>
-            <div className= "display_container">
-                <div className= "display_container image">
+            <div className="display_container">
+                <div className="display_container image">
                     <img src={image} alt={title} />
                 </div>
                 <div className= "display_container content">
@@ -77,21 +74,18 @@ function SingleBookDetail () {
                     <p><strong>Blurb:</strong></p>
                     <p className="blurb">{blurb}</p>
                     <div className="claimedBookForm">        
-                        {!capitalName && <ClaimBookForm bookclaim={setCapitalName} id={id}/> }
+                        {!capitalName && <ClaimBookForm bookClaim={setCapitalName} id={id}/> }
                         {capitalName && <p><strong>Claimed by:&nbsp;</strong> {capitalName}</p>}
-                        {capitalName && <BookReturnForm bookclaim={setCapitalName} id={id}/>}
+                        {capitalName && <BookReturnForm bookClaim={setCapitalName} id={id}/>}
                     </div>   
                 </div>
             </div>
             <div className="book-review-container">
-                <div>
-                    <BookReviews id={id}/>
-                </div>
                 <section>
                     <h1 className="review-title">Reviews</h1>
                     {reviews.map(review =>
                         <BookReviewPage
-                            key={id}
+                            key={review.id}
                             id={review.id}
                             name={review.name}
                             rating={review.rating}
@@ -106,4 +100,5 @@ function SingleBookDetail () {
         </div>
     )
 }
+
 export default SingleBookDetail
