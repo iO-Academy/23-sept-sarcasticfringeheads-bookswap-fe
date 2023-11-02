@@ -4,7 +4,7 @@ import "./BookReviewPage.css"
 function BookReviewPage({name, review, rating}){
     <SingleBookDetail/>
     
-    return(
+    return (
         <div className="reviewBox">
             <h3>{name}</h3>
             <h4>{rating}</h4>
