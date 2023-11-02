@@ -35,21 +35,29 @@ function AddBook(){
 
     function addBookSubmit(event){
         event.preventDefault()
+        let bookData = {
+            'title': title,
+            'author': author,
+            'genre_id': parseInt(genre)
+        }
 
+        if (blurb != '') {
+            bookData['blurb'] = blurb
+        }
+        if (imageurl != '') {
+            bookData['image'] = imageurl
+        }
+        if (year != '') {
+            bookData['year'] = year
+        }
+        
         console.log(`title: ${title}, author: ${author}, genre_id: ${genre}, blurb: ${blurb}, image: ${imageurl}, year: ${year}`)
         fetch ("https://book-swap-api.dev.io-academy.uk/api/books", {
             method: 'POST',
             mode: 'cors',
             headers: {'content-type':'application/json', 'accept':'application/json'
         },
-            body: JSON.stringify({
-                'title': title,
-                'author': author,
-                'genre_id': parseInt(genre),
-                'blurb': blurb,
-                'image': imageurl,
-                'year': year,
-            })
+            body: JSON.stringify(bookData)
         })
             
             .then(function (res) {
