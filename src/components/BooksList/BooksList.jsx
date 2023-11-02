@@ -24,7 +24,8 @@ function BooksList({claimed}) {
     useEffect (function() {
         let url = `https://book-swap-api.dev.io-academy.uk/api/books?claimed=${claimed}`
         if (genre != '') {
-            url = 'https://book-swap-api.dev.io-academy.uk/api/books?claimed=' + {claimed} + '&genre=' + genre
+            // url = 'https://book-swap-api.dev.io-academy.uk/api/books?claimed=' + {claimed} + '&genre=' + genre
+            url = `https://book-swap-api.dev.io-academy.uk/api/books?claimed=${claimed}&genre=${genre}`
         }
 
         fetch(url)

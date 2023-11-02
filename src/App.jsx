@@ -16,8 +16,8 @@ function App() {
       
 
         <Routes>
-            <Route path='/' element={<BooksList claimed='0' />} />
-            <Route path='/books/claimed' element={<BooksList claimed='1' />} />
+            <Route path='/' element={<Home />} />
+            <Route path='/books/claimed' element={<ClaimedBooks />} />
             <Route path='/books/:id' element={<SingleBookDetail />} />
             <Route path='/books/genres' element={<GenreFilter />} />
 
