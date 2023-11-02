@@ -4,8 +4,6 @@ import { useParams } from "react-router-dom"
 import ClaimBookForm from "../../ClaimBookForm/ClaimBookForm"
 import BookReturnForm from "../../BookReturnForm/BookReturnForm"
 import BookReviewPage from "../../BookReviewPage/BookReviewPage"
-// import BookReviewPage from "../../BookReviewPage/BookReviewPage"
-
 
 function SingleBookDetail () {
     const [title, setTitle] = useState('')
@@ -56,7 +54,7 @@ function SingleBookDetail () {
                 
             })
             let review_average = total / review_count
-                setReviewAverage(Math.round(review_average))
+            setReviewAverage(Math.round(review_average))
         })
     }, [])
     
