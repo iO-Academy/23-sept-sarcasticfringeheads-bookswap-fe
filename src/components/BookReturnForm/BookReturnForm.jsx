@@ -1,40 +1,39 @@
 import { useState } from "react"
 
-function BookReturnForm ({id, bookclaim}) {
+function BookReturnForm ({id, bookClaim}) {
     const [email, setEmail] = useState ('')
+    const [isError, setIsError] = useState(false)
+    const [errorMessage, setErrorMessage] = useState([])
 
-    function submit(event){
-        console.log('Email state variable: ', email, '     event.... value:', event.target.email.value)
+    function submitReturn(event){
         event.preventDefault()
-        console.log('submitted returned book (attempt)!')
-
+    
         fetch('https://book-swap-api.dev.io-academy.uk/api/books/return/' + id, {
             method: "PUT",
             mode: 'cors',
             headers: {
-                "Content-Type": "application/json",
+                "Content-Type": "application/json", "accept": "application/json"
             },
             body: JSON.stringify({
-                email: event.target.email.value,
+                email: email,
             }),
         }) 
-        .then((res) => {
-            if (res.ok) {
-                console.log('Return request submitted successfully.');
-                bookclaim(null)
-                // Successfully Claimed
-            } else {
-                console.error('Failed to submit Return request.');
-                // Error in Claiming
+        .then((response) => {
+            if (response.ok) {
+                setIsError(false)
+                // Bookclaim is a setCapitalName passed down as a prop. 
+                // i.e if claim is successful change the state of capitalName to the name that was submitted
+                bookClaim(null)
+
+            } 
+            else {
+                // Get the error message from JSON and put it in the form.
+                response.json().then(function (response_json) {
+                    setIsError(true)
+                    setErrorMessage(response_json.message)
+                });
             }
         })
-        .catch((error) => {
-            console.error('Error:', error);
-            // Some other error. issue apology.
-            console.log('something else went wrong with Returning')
-        });
-        
-
     }
 //Do we also need to input function where if successful change claimed=0??
 //  To make the book change from claimed to available?
@@ -42,9 +41,10 @@ function BookReturnForm ({id, bookclaim}) {
     return (
         <div>
             <h2>Would you like to return this book?</h2>
-            <form onSubmit={submit}>
-                <label htmlFor="Email" value={email}>Email</label>
-                <input type="email" id='email' onChange={setEmail}/>
+            {isError && <span className='errormessage'>{errorMessage}</span>}
+            <form onSubmit={submitReturn}>
+                <label htmlFor="emailReturn">Email</label>
+                <input type="email" id='emailReturn' value={email} onChange={(e) => setEmail(e.target.value)} />
                 <input type="submit" />
             </form>
         </div>
