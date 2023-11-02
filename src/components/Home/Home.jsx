@@ -20,22 +20,6 @@ function Home() {
     }, [])
    
     return (
-        
-        <>
-        <div>
-            <label for="cars">Choose a genre:</label>
-
-            <select name="cars" id="cars">
-            <option value="volvo">Volvo</option>
-            <option value="saab">Saab</option>
-            <option value="mercedes">Mercedes</option>
-            <option value="audi">Audi</option>
-            </select>
-        </div>
-        
-        
-    
-        
         <div className='books-container'>
             {books.map(book => 
             <BookListing 
@@ -48,7 +32,7 @@ function Home() {
                 setClickedBookId={setclickedBookId}/>    
             )}
         </div>
-        </>
     )
 }
+
 export default Home

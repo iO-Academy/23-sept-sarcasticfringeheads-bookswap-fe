@@ -5,12 +5,10 @@ function FilterNav() {
     return (
         <nav className="filternav">
             <ul className="navbooks">
-                <NavLink to="/books/genre/1">Genre</NavLink>
-                <NavLink to="/books/genre/2">Genre</NavLink>
-                <NavLink to="/books/genre/3">Genre</NavLink>
-                <NavLink to="/books/genre/4">Genre</NavLink>
-                <NavLink to="/books/genre/5">Genre</NavLink>
-                <NavLink to="/books/genre/6">Genre</NavLink>
+                <NavLink to="/books/genres">Historical</NavLink>
+                <NavLink to="/books/genres">Non-Fiction</NavLink>
+                <NavLink to="/books/genres">Romance</NavLink>
+                <NavLink to="/books/genres">Thriller</NavLink>
             </ul>
         </nav>
     )

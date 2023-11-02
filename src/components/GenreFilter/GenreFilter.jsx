@@ -7,7 +7,7 @@ function GenreFilter() {
     const [clickedBookId, setclickedBookId] = useState(null)
 
     useEffect (function() {
-        fetch('https://book-swap-api.dev.io-academy.uk/api/books?genre=1')
+        fetch('https://book-swap-api.dev.io-academy.uk/api/books?genres=1')
             .then(function (res) {
                 return res.json()
             })
