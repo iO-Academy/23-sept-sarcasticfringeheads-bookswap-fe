@@ -60,3 +60,11 @@
 .book-review-container{
     display: flex;
 }
+
+.review-title{
+    font-size: xx-large;
+    margin-left: 35px;
+    margin-bottom: -65px;
+    margin-top: 42px;
+    border-bottom: 1px solid black;
+}

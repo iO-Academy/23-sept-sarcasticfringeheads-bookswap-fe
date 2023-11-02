@@ -88,6 +88,7 @@ function SingleBookDetail () {
                     <BookReviews id={id}/>
                 </div>
                 <section>
+                    <h1 className="review-title">Reviews</h1>
                     {reviews.map(review =>
                         <BookReviewPage
                             key={id}
