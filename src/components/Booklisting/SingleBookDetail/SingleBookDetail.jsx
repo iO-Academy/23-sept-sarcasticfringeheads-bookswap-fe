@@ -3,7 +3,6 @@ import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import ClaimBookForm from "../../ClaimBookForm/ClaimBookForm"
 import BookReturnForm from "../../BookReturnForm/BookReturnForm"
-import BookReviews from "../../BookReviews/BookReviews"
 import BookReviewPage from "../../BookReviewPage/BookReviewPage"
 // import BookReviewPage from "../../BookReviewPage/BookReviewPage"
 
@@ -84,13 +83,10 @@ function SingleBookDetail () {
                 </div>
             </div>
             <div className="book-review-container">
-                <div>
-                    <BookReviews id={id}/>
-                </div>
                 <section>
                     {reviews.map(review =>
                         <BookReviewPage
-                            key={id}
+                            key={review.id}
                             id={review.id}
                             name={review.name}
                             rating={review.rating}
