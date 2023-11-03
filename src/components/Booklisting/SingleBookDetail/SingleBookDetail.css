@@ -58,12 +58,24 @@
     margin-bottom: 0;
 }
 
+.review-title{
+    margin-top: 30px;
+    font-size: xxx-large;
+    margin-left: 33px;
+    margin-bottom: -78px;
+    border-bottom: 1px solid black;
+}
+
 .book-review-container {
     display: flex;
 }
 
+
 @media screen and (max-width: 800px){
     .display_container {
+        flex-direction: column;
+    }
+    .book-review-container {
         flex-direction: column;
     }
 }

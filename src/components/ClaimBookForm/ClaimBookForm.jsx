@@ -7,6 +7,7 @@ function ClaimBookForm({id, bookClaim}) {
     const [email, setEmail] = useState('')
     const [errorMessage, setErrorMessage] = useState('')
     const [isError, setIsError] = useState(false)
+    
     function claimAttempt(event) {
         
         event.preventDefault();
