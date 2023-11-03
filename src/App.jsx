@@ -12,6 +12,7 @@ import BooksList from './components/BooksList/BooksList'
 function App() {
   return (
    <BrowserRouter>
+
       <Nav />
       
 
@@ -20,9 +21,9 @@ function App() {
             <Route path='/books/claimed' element={<ClaimedBooks />} />
             <Route path='/books/:id' element={<SingleBookDetail />} />
             <Route path='/books/genres' element={<GenreFilter />} />
-
             <Route path='*' element={<Error />} />
         </Routes>
+
    </BrowserRouter>
   )
 }

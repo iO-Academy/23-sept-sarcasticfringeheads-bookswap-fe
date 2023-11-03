@@ -5,7 +5,6 @@ import BookListing from "../Booklisting/Booklisting"
 function Home() {
     const [books, setBooks] = useState([])
     const [genre, setGenre] = useState ('')
-
     const [genresList, setGenresList] = useState([])
     const [genresListLength, setGenresListLength] = useState(0)
 

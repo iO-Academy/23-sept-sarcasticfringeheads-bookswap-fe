@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react"
-import { useParams } from "react-router-dom"
 import BookListing from "../Booklisting/Booklisting"
 import "./ClaimedBooks.css"
 
@@ -53,19 +52,21 @@ function ClaimedBooks() {
                     <option className="option" key={list_item.id} value={list_item.id}>{list_item.name}</option>)}
                 </select>
             </div>
-        </div>
+       </div>
       
         <div className ='books-container'>
             {books.map(book => 
-            <BookListing
+
+         <BookListing
             title={book.title} 
             author={book.author} 
             image={book.image} 
             genre={book.genre.name} 
             id={book.id} 
             key={book.id}
-            />    
-            )}
+          />    
+
+          )}
         </div>
 
         </>
