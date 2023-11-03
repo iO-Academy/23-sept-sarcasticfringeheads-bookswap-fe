@@ -42,18 +42,11 @@ function BookReturnForm ({id, bookClaim}) {
     return (
         <div className="return-book-form">
             <h2>Would you like to return this book?</h2>
-<<<<<<< HEAD
-            <form onSubmit={submit}>
-                <label htmlFor="Email" value={email}>Email</label>
-                <input type="email" id='email' onChange={setEmail}/>
-                <input  id="submit" type="submit" />
-=======
             {isError && <span className='errormessage'>{errorMessage}</span>}
             <form onSubmit={submitReturn}>
                 <label htmlFor="emailReturn">Email</label>
                 <input type="email" id='emailReturn' value={email} onChange={(e) => setEmail(e.target.value)} />
                 <input type="submit" />
->>>>>>> main
             </form>
         </div>
     )
