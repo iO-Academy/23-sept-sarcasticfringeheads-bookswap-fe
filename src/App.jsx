@@ -9,13 +9,14 @@ import ClaimedBooks from './components/ClaimedBooks/ClaimedBooks'
 function App() {
   return (
    <BrowserRouter>
-    <Nav />
-    <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/books/claimed' element={<ClaimedBooks />} />
-        <Route path='/books/:id' element={<SingleBookDetail />} />
-        <Route path='*' element={<Error />} />
-      </Routes>
+      <Nav />
+        <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/books/claimed' element={<ClaimedBooks />} />
+            <Route path='/books/:id' element={<SingleBookDetail />} />
+            <Route path='*' element={<Error />} />
+        </Routes>
+
    </BrowserRouter>
   )
 }
