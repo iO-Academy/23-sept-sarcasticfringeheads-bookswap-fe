@@ -24,3 +24,7 @@ form.add-book-form textarea {
 form.add-book-form #addblurb {
     height: 20vw;
 }
+
+span.successmessage {
+    color: green;
+}

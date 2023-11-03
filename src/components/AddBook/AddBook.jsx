@@ -20,6 +20,7 @@ function AddBook(){
     
     const [errorMessage, setErrorMessage] = useState('')
     const [isError, setIsError] = useState(false)
+    const [success, setSuccess] = useState(false)
         
     // Fetch to get genres:
     useEffect(() => {
@@ -68,6 +69,8 @@ function AddBook(){
                     setBlurb('')   
                     setImageurl('')  
                     setYear('')
+                    setIsError(false)
+                    setSuccess(true)
             } 
             else if (res.status === 500 || res.status === 422) {
                     res.json().then(function (response_json) {
@@ -117,6 +120,7 @@ function AddBook(){
                     <textarea value={blurb} onChange={(e) => setBlurb(e.target.value)} />   
                 <label htmlFor="addsubmit"></label>
                 {isError && <span className='errormessage'>{errorMessage}</span>}
+                {success && <span className='successmessage'>Book has been added!</span>}
                     <input type='submit' id='addsubmit' value='Add Book'/>
             </form>
         </div>
