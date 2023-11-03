@@ -11,7 +11,12 @@ nav {
     width: 100%;
     background: rgba(0, 0, 0);
     padding: 10px;
+<<<<<<< HEAD
     max-height: 80px;
+=======
+    max-height: 100px;
+    z-index: 1;
+>>>>>>> main
 }
 
 nav ul {
@@ -20,7 +25,7 @@ nav ul {
     justify-content: space-between;
     align-content: space-between;
     align-items:center;
-    font-size: 2rem;
+    font-size: 40px;
     padding-right: 50px;
 }
 
@@ -41,13 +46,13 @@ nav ul a {
 nav ul a:hover {
     text-decoration: none;
     cursor: pointer;
-    color: rgb(255, 182, 87);
+    color: rgb(0, 238, 255);
 }
 
 .navbooks {
-    font-size: medium;
+    font-size: 20px;
 }
 
 nav ul a.active {
-    color: rgb(255, 182, 87);
+    color: rgb(0, 238, 255);
 }

@@ -46,7 +46,7 @@ function BookReturnForm ({id, bookClaim}) {
             <form onSubmit={submitReturn}>
                 <label htmlFor="emailReturn">Email</label>
                 <input type="email" id='emailReturn' value={email} onChange={(e) => setEmail(e.target.value)} />
-                <input type="submit" />
+                <input id='submitReturn' type="submit" />
             </form>
         </div>
     )

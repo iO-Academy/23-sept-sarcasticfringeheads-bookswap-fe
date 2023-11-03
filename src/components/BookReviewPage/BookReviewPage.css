@@ -1,0 +1,20 @@
+.reviewBox{
+    width: 480px;
+    margin-left: 33px;
+    margin-top: 98px;
+}   
+
+.reviewBox h3{
+    font-size: x-large;
+    margin-bottom: -10px;
+}
+
+.reviewBox h4{
+    font-size: larger;
+}
+
+.reviewBox p{
+    margin-bottom: -70px;
+    border-bottom: 1px solid black;
+    padding-bottom: 10px;   
+}
