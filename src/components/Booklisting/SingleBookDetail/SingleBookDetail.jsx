@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom"
 import ClaimBookForm from "../../ClaimBookForm/ClaimBookForm"
 import BookReturnForm from "../../BookReturnForm/BookReturnForm"
 import BookReviewPage from "../../BookReviewPage/BookReviewPage"
-import BookReviews from "../../BookReviews/BookReviews"
+import BookReviews from "../../BookReviewForm/BookReviewForm"
 
 function SingleBookDetail () {
     const [title, setTitle] = useState('')

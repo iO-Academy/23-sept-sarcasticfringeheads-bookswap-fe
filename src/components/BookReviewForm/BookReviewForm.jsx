@@ -1,5 +1,5 @@
 import { useState } from "react"
-import './BookReviews.css'
+import './BookReviewForm.css'
 
 function BookReviews({id, reviews, setReviews}){
         const[name, setName] = useState('')
@@ -48,7 +48,7 @@ function BookReviews({id, reviews, setReviews}){
         })
     }
 
-    function changeName (event) {
+    function changeName(event) {
         setName(event.target.value)
     }
     
@@ -56,7 +56,7 @@ function BookReviews({id, reviews, setReviews}){
         setRating(event.target.value)
     }
 
-    function ChangeReview (event) {
+    function ChangeReview(event) {
         setReview(event.target.value)
     }
 
