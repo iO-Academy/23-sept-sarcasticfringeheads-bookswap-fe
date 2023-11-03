@@ -1,7 +1,7 @@
 import { useState } from "react"
 import './BookReviewForm.css'
 
-function BookReviews({id, reviews, setReviews}){
+function BookReviewForm({id, reviews, setReviews}){
         const[name, setName] = useState('')
         const[rating, setRating] = useState('')
         const[review, setReview] = useState('')
@@ -95,4 +95,4 @@ function BookReviews({id, reviews, setReviews}){
     )
 }
 
-export default BookReviews
+export default BookReviewForm
