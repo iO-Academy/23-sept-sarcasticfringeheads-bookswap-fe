@@ -5,7 +5,7 @@ function BookReviewForm({id, reviews, setReviews}){
         const[name, setName] = useState('')
         const[rating, setRating] = useState('')
         const[review, setReview] = useState('')
-        const[isError, setIsError] = useState('')
+        const[isError, setIsError] = useState(false)
         const[errorMessage, setErrorMessage] = useState('')
 
     function submitReview (event){
@@ -37,6 +37,10 @@ function BookReviewForm({id, reviews, setReviews}){
                     'id' : Math.floor(Math.random() * 1000),
                 })
                 setReviews(new_reviews)
+                setRating('')
+                setName('')
+                setReview('')
+                
             } 
             else {
                 // Get the error message from JSON and put it in errormessage state variable.

@@ -1,0 +1,26 @@
+form.add-book-form {
+    margin-top: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+}
+
+form.add-book-form label {
+    padding-top: 40px;
+}
+
+form.add-book-form input, select, textarea{
+    margin-top: 20px;
+    width: 300px;
+    font: inherit;
+}
+
+form.add-book-form textarea {
+    height: 20vw;
+}
+
+form.add-book-form #addblurb {
+    height: 20vw;
+}
