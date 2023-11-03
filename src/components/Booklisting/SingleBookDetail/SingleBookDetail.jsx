@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom"
 import ClaimBookForm from "../../ClaimBookForm/ClaimBookForm"
 import BookReturnForm from "../../BookReturnForm/BookReturnForm"
 import BookReviewPage from "../../BookReviewPage/BookReviewPage"
+import BookReviewForm from "../../BookReviewForm/BookReviewForm"
 
 function SingleBookDetail () {
     const [title, setTitle] = useState('')
@@ -82,7 +83,11 @@ function SingleBookDetail () {
 
             </div>
             <div className="book-review-container">
+            <div>
+                <BookReviewForm reviews={reviews} setReviews={setReviews} id={id}/>
+            </div>
                 <section>
+                    <h1 className="review-title">Reviews</h1>
                     {reviews.map(review =>
                         <BookReviewPage
                             key={review.id}
@@ -92,9 +97,6 @@ function SingleBookDetail () {
                             review={review.review}
                         />
                     )}
-                
-                    
-                
                 </section>
             </div>
         </div>

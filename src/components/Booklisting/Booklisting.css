@@ -1,4 +1,4 @@
-div.singleBookWrapper {
+.singleBookWrapper {
     display: flex;
     flex-direction: column;
     align-content: center;
