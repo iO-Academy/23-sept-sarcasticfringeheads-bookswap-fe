@@ -44,7 +44,7 @@ function ClaimedBooks() {
         </div> 
 
         <div className="filter">
-            <label >Filter by genre:</label>
+            <label>Filter by genre:</label>
             <div className="content-select">
                 <select id='addgenre' value={genre} onChange={(e) => setGenre(e.target.value)}>
                     <option value=''>Select</option>

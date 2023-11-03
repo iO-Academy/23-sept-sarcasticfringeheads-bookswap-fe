@@ -90,7 +90,12 @@ function AddBook(){
     
     return (
         <div>
-            <h3>Add A Book to the Book Swap!</h3>
+            <div className="welcome">
+                <h1>Add a Book to our Book Swap</h1>
+                <h3>Enter the book details for your favourite book and we can get this added to our Swap.</h3>
+                <span></span>
+            </div> 
+            
             <form onSubmit={addBookSubmit} className="add-book-form">
                 <label htmlFor='addtitle'>Title (required)</label>
                     <input type='text' id='addtitle' value={title} onChange={(e) => setTitle(e.target.value)}/>
