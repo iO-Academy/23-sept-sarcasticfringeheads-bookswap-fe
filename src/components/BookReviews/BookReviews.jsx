@@ -26,7 +26,9 @@ function BookReviews({id, reviews, setReviews}){
         .then((response) => {
             if (response.ok) {
                 setIsError(false)
-                let new_reviews = reviews
+                let new_reviews = reviews.map(review => {
+                    return review;
+                })
                 new_reviews.push({
                     'name': name,
                     'rating': parseInt(rating),
@@ -35,8 +37,6 @@ function BookReviews({id, reviews, setReviews}){
                     'id' : Math.floor(Math.random() * 1000),
                 })
                 setReviews(new_reviews)
-                // **Bandaid fix as state change of Reviews isn't currently being re-rendered in the .map (in SingleBookDetail component)**
-                window.location.reload()
             } 
             else {
                 // Get the error message from JSON and put it in errormessage state variable.
