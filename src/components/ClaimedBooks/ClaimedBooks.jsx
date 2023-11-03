@@ -40,8 +40,8 @@ function ClaimedBooks() {
         <>
 
         <div className="welcome">
-            <h1>Claim a book</h1>
-            <h3>Choose a book below, enter your name and email to add the book to your bookshelf</h3>
+            <h1>You missed your chance</h1>
+            <h3>The follwing books have already been claimed, but don't worry, feel free to have a look, if you would like to return a book please do so by entering your email on the book page</h3>
             <span></span>
         </div> 
 
@@ -49,7 +49,6 @@ function ClaimedBooks() {
             <label >Filter by genre:</label>
             <div className="content-select">
                 <select id='addgenre' value={genre} onChange={(e) => setGenre(e.target.value)}>
-                    <option value={''}></option>
                     {genresListLength > 0 && genresList.map(list_item => 
                     <option className="option" key={list_item.id} value={list_item.id}>{list_item.name}</option>)}
                 </select>

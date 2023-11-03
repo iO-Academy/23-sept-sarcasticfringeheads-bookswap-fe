@@ -39,7 +39,7 @@ function Home() {
         <>
            <div className="welcome">
                 <h1>Welcome to Book Swap </h1>
-                <h3>Checkout available books, check what's claimed or add a book to the shelf</h3>
+                <h3>Checkout these available books. Choose a book to view further details and enter your details to claim it</h3>
                 <span></span>
             </div> 
             
@@ -48,7 +48,6 @@ function Home() {
                 <label > Filter by genre:</label>
             
                 <select id='addgenre' value={genre} onChange={(e) => setGenre(e.target.value)}>
-                    <option value={''}></option>
                     {genresListLength > 0 && genresList.map(list_item => 
                     <option key={list_item.id} value={list_item.id}>{list_item.name}</option>)}
                 </select>
