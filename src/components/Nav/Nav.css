@@ -11,12 +11,8 @@ nav {
     width: 100%;
     background: rgba(0, 0, 0);
     padding: 10px;
-<<<<<<< HEAD
-    max-height: 80px;
-=======
     max-height: 100px;
     z-index: 1;
->>>>>>> main
 }
 
 nav ul {

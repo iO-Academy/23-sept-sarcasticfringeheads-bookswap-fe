@@ -10,7 +10,7 @@ function Nav() {
             <ul className="navbooks">
                 <NavLink to="/books/claimed">Claimed Books</NavLink>
                 <NavLink to="/">Available Books</NavLink>
-                <NavLink to="/addabook">Add a Book</NavLink>
+                <NavLink to="/books/addabook">Add a Book</NavLink>
             </ul>
         </nav>
     )

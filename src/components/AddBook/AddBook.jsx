@@ -12,14 +12,15 @@ function AddBook(){
     const [genresListLength, setGenresListLength] = useState(0)
 
     // Optional
-    const [blurb, setBlurb] = useState('')
-        const [isBlurb, setIsBlurb] = useState(false)
-    const [imageurl, setImageurl] = useState('')
-        const [isImageUrl, setIsImageUrl] = useState(false)
+    const [blurb, setBlurb] = useState('')   
+    const [imageurl, setImageurl] = useState('')  
     const [year, setYear] = useState('')
-        const [isYear, setIsYear] = useState(false)
+
+    // Error handling
     
-    
+    const [errorMessage, setErrorMessage] = useState('')
+    const [isError, setIsError] = useState(false)
+        
     // Fetch to get genres:
     useEffect(() => {
         fetch("https://book-swap-api.dev.io-academy.uk/api/genres")
@@ -58,27 +59,38 @@ function AddBook(){
             headers: {'content-type':'application/json', 'accept':'application/json'
         },
             body: JSON.stringify(bookData)
+        }) 
+        .then(function (res) {
+            if (res.status === 201) {
+                    setTitle('')
+                    setAuthor('')
+                    setGenre('')
+                    setBlurb('')   
+                    setImageurl('')  
+                    setYear('')
+            } 
+            else if (res.status === 500 || res.status === 422) {
+                    res.json().then(function (response_json) {
+                    console.log(response_json.message)
+                    setIsError(true)
+                    setErrorMessage(response_json.message)
+                    
+                });
+                
+            } 
+            else {
+                res.json().then(function (response_json) {
+                    console.log(response_json.message)
+                    setIsError(true)
+                    setErrorMessage(response_json.message)
+                });
+            }
         })
-            
-            .then(function (res) {
-                if (res.status === 201) {
-                    // Book added successfully
-                    console.log('Book added successfully.');
-                } else if (res.status === 500 || res.status === 422) {
-                    // Handle errors (server error or validation errors) appropriately
-                    console.error('Error adding the book.');
-                } else {
-                    // Handle other status codes as needed
-                    console.error('Unexpected error.');
-                }
-            })
-        
-        }
+    }
     
     return (
         <div>
             <h3>Add A Book to the Book Swap!</h3>
-
             <form onSubmit={addBookSubmit} className="add-book-form">
                 <label htmlFor='addtitle'>Title (required)</label>
                     <input type='text' id='addtitle' value={title} onChange={(e) => setTitle(e.target.value)}/>
@@ -99,6 +111,7 @@ function AddBook(){
                 <label htmlFor='addblurb'>Blurb:</label>
                     <textarea value={blurb} onChange={(e) => setBlurb(e.target.value)} />   
                 <label htmlFor="addsubmit"></label>
+                {isError && <span className='errormessage'>{errorMessage}</span>}
                     <input type='submit' id='addsubmit' value='Add Book'/>
             </form>
         </div>

@@ -5,7 +5,7 @@ function BookReviewForm({id, reviews, setReviews}){
         const[name, setName] = useState('')
         const[rating, setRating] = useState('')
         const[review, setReview] = useState('')
-        const[isError, setIsError] = useState('')
+        const[isError, setIsError] = useState(false)
         const[errorMessage, setErrorMessage] = useState('')
 
     function submitReview (event){
