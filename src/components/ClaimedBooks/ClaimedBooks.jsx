@@ -48,6 +48,7 @@ function ClaimedBooks() {
             <label >Filter by genre:</label>
             <div className="content-select">
                 <select id='addgenre' value={genre} onChange={(e) => setGenre(e.target.value)}>
+                    <option value=''>Select</option>
                     {genresListLength > 0 && genresList.map(list_item => 
                     <option className="option" key={list_item.id} value={list_item.id}>{list_item.name}</option>)}
                 </select>
