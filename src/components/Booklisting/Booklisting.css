@@ -15,5 +15,8 @@
     border-radius: 3px;
 }
 
-
+a.singleBookWrapper {
+    text-decoration: none;
+    color: black;
+}
   

@@ -37,10 +37,9 @@ function ClaimedBooks() {
 
     return (
         <>
-
         <div className="welcome">
             <h1>You missed your chance</h1>
-            <h3>The follwing books have already been claimed, but don't worry, feel free to have a look, if you would like to return a book please do so by entering your email on the book page</h3>
+            <h3>The following books have already been claimed, but don't worry, feel free to have a look, if you would like to return a book please do so by entering your email on the book page</h3>
             <span></span>
         </div> 
 
@@ -69,7 +68,6 @@ function ClaimedBooks() {
 
           )}
         </div>
-
         </>
 
 
