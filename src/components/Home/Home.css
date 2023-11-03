@@ -9,23 +9,19 @@
 }
 
 .welcome {
-        position: relative;
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: column;
-        justify-content: space-between;
         gap: 2px;
-        align-content: flex-start;
-        align-items: flex-start;
         top: 0;
         left:0;
         right: 0;
-        width: 100%;
         background: rgb(234, 234, 234);
-        padding-left: 400px;
         height: 400px;
         z-index: -1;
         box-shadow: 0 4px 6px -6px #222;
+        text-align: center;
+        padding-top: 50px;
+        width: 100%;
+        margin: 0;
+        position: relative;
 }
 
 
@@ -34,7 +30,6 @@
     margin-top: 180px;
     margin-bottom:0px;
     text-shadow: 3px 3px 9px rgba(204, 204, 204, 1);
-
 }
 
 .welcome h2 {
@@ -49,9 +44,10 @@
     font-size: 22px;
     font-weight:lighter;
     margin-bottom: 50px;
-    margin-top: 0px;
-    width: 800px;
-
+    margin-top: 20px;
+    text-align: center;
 }
 
-
+#root{
+    width: 100%;
+}
