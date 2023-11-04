@@ -57,7 +57,6 @@ function SingleBookDetail () {
                 
             })
             let review_average = total / review_count
-            console.log(review_average)
             //get the rounded number of review average * 1000 (ie if 2.55910 -> 2559), then divide result by 1000 -> 2.559
             setReviewAverage(Math.round((review_average * 1000)) / 1000)
         })
