@@ -25,6 +25,8 @@ function SingleBookDetail () {
     //Store all reviews in a state reivews setReviews
     //separate component to 
 
+
+
     useEffect (function(){
         fetch('https://book-swap-api.dev.io-academy.uk/api/books/' +id)
         .then(function(res){
@@ -60,10 +62,22 @@ function SingleBookDetail () {
             //get the rounded number of review average * 1000 (ie if 2.55910 -> 2559), then divide result by 1000 -> 2.559
             setReviewAverage(Math.round((review_average * 1000)) / 1000)
         })
+        .then(() => {
+            
+            setTimeout(() => {
+                window.scroll({
+                    top: 0,
+                    left: 0,
+                    behaviour: 'smooth',
+                })
+            }, 400)
+            
+        })
     }, [])
     
+
     return (
-        <motion.div initial={{y: '+100%'}} animate={{y: '0%', transition: {duration: 0.3}}} exit={{y: ('-120%'), transition: {duration: 0.6}}}>
+        <motion.div initial={{y: '-100%'}} animate={{y: '0%', transition: {duration: 0.3}}} exit={{y: ('-100%'), transition: {duration: 0.6}}}>
             <div className="display_container">
                 <div className="display_container image">
                     <img src={image} alt={title} />

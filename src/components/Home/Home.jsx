@@ -1,11 +1,12 @@
 import "./Home.css"
 import { useEffect, useState } from "react"
 import BookListing from "../Booklisting/Booklisting"
-import { motion } from "framer-motion"
+import { motion} from "framer-motion"
 
 //bsmnt
 
 import * as scrol from '@bsmnt/scrollytelling'
+
 
 function Home() {
     const [books, setBooks] = useState([])
@@ -39,6 +40,8 @@ function Home() {
             })
     }, [genre])
    
+   
+
     return (
         
         <motion.div initial={{x: '-100%'}} animate={{x: '0%', transition: {duration: 0.3}}} exit={{x: '100%', transition: {duration: 0.6}}}>
@@ -57,7 +60,6 @@ function Home() {
                         <option key={list_item.id} value={list_item.id}>{list_item.name}</option>)}
                     </select>
                 </div>
-                {/* <scrol.Animation tween={{start: 0, end: 1, from : { opacity: 0 } }}> */}
                     <div className='books-container'>
                         {books.map(book => 
                         
@@ -71,8 +73,6 @@ function Home() {
                             /> 
                         )}
                     </div>
-                {/* </scrol.Animation> */}
-
         </motion.div>
         
         
