@@ -50,11 +50,11 @@ function ClaimBookForm({id, bookClaim}) {
                 {isError && <span className='errormessage'>{errorMessage}</span>}
                 
                 <span>
-                    <label htmlFor="name">Name:  </label>
+                    <label htmlFor="name">Name:</label>
                     <input type="text" id='name' placeholder="name" value={name} onChange={(e) => setName(e.target.value)}></input>
                 </span>
                 <span>
-                    <label htmlFor="emailClaim">Email:  </label>
+                    <label htmlFor="emailClaim">Email: </label>
                     <input type="email" id='emailClaim' placeholder="email@email.com" value={email} onChange={(e) => setEmail(e.target.value)}></input>
                 </span>
                 <input className="claimSubmit" type='submit' value='Claim'></input>

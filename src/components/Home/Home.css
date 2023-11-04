@@ -51,3 +51,27 @@
 #root{
     width: 100%;
 }
+
+@font-face {
+    font-family: 'lora';
+    src: url(../../assets/fonts/Lora-VariableFont_wght.ttf) format('truetype')
+}
+
+@font-face {
+    font-family: 'quattrobold';
+    src: url(../../assets/fonts/Quattrocento-Bold.ttf) format('truetype')
+}
+
+@font-face {
+    font-family: 'quattroreg';
+    src: url(../../assets/fonts/Quattrocento-Regular.ttf) format('truetype')
+}
+
+body, html {
+    font-family: 'lora'
+}
+
+h1, h2, h3, h4 {
+    font-family: 'quattroreg';
+}
+

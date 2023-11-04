@@ -1,5 +1,5 @@
 form.add-book-form {
-    margin-top: 150px;
+    padding-top: 10px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -28,3 +28,4 @@ form.add-book-form #addblurb {
 span.successmessage {
     color: green;
 }
+
