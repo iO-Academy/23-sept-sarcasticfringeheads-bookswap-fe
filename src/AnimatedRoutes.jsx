@@ -5,7 +5,7 @@ import SingleBookDetail from './components/Booklisting/SingleBookDetail/SingleBo
 import Home from './components/Home/Home'
 import ClaimedBooks from './components/ClaimedBooks/ClaimedBooks'
 import AddBook from './components/AddBook/AddBook'
-import TestPage from "./components/TestPage/TestPage";
+
 
 
 import { AnimatePresence } from "framer-motion";
@@ -19,7 +19,6 @@ function AnimatedRoutes() {
             <Route path='/books/claimed' element={<ClaimedBooks />} />
             <Route path='/books/:id' element={<SingleBookDetail />} />
             <Route path='/books/addabook' element={<AddBook />} />
-            <Route path='/testing' element={<TestPage />} />
             <Route path='*' element={<Error />} />
             
         </Routes>
