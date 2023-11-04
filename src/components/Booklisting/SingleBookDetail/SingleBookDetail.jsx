@@ -6,6 +6,8 @@ import BookReturnForm from "../../BookReturnForm/BookReturnForm"
 import BookReviewPage from "../../BookReviewPage/BookReviewPage"
 import BookReviewForm from "../../BookReviewForm/BookReviewForm"
 
+import { motion } from "framer-motion"
+
 function SingleBookDetail () {
     const [title, setTitle] = useState('')
     const [blurb, setBlurb] = useState('')
@@ -55,12 +57,14 @@ function SingleBookDetail () {
                 
             })
             let review_average = total / review_count
-            setReviewAverage(Math.round(review_average))
+            console.log(review_average)
+            //get the rounded number of review average * 1000 (ie if 2.55910 -> 2559), then divide result by 1000 -> 2.559
+            setReviewAverage(Math.round((review_average * 1000)) / 1000)
         })
     }, [])
     
     return (
-        <div>
+        <motion.div initial={{y: '+100%'}} animate={{y: '0%', transition: {duration: 0.3}}} exit={{y: ('-120%'), transition: {duration: 0.6}}}>
             <div className="display_container">
                 <div className="display_container image">
                     <img src={image} alt={title} />
@@ -86,7 +90,7 @@ function SingleBookDetail () {
             <div>
                 <BookReviewForm reviews={reviews} setReviews={setReviews} id={id}/>
             </div>
-                <section>
+                <section id='review-column'>
                     <h1 className="review-title">Reviews</h1>
                     {reviews.map(review =>
                         <BookReviewPage
@@ -99,7 +103,7 @@ function SingleBookDetail () {
                     )}
                 </section>
             </div>
-        </div>
+        </motion.div>
     )
 }
 

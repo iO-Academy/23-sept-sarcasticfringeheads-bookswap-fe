@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import BookListing from "../Booklisting/Booklisting"
+import { motion } from "framer-motion"
 import "./ClaimedBooks.css"
 
 function ClaimedBooks() {
@@ -36,7 +37,7 @@ function ClaimedBooks() {
     }, [genre])
 
     return (
-        <>
+        <motion.div initial={{x: '-100%'}} animate={{x: '0%', transition: {duration: 0.3}}} exit={{x: '100%', transition: {duration: 0.6}}}>
         <div className="welcome">
             <h1>You missed your chance</h1>
             <h3>The following books have already been claimed, but don't worry, feel free to have a look, if you would like to return a book please do so by entering your email on the book page</h3>
@@ -68,7 +69,7 @@ function ClaimedBooks() {
 
           )}
         </div>
-        </>
+        </motion.div>
 
 
 

@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import "./AddBook.css"
+import { motion } from "framer-motion";
+
 
 function AddBook(){
 
@@ -16,7 +18,7 @@ function AddBook(){
     const [imageurl, setImageurl] = useState('')  
     const [year, setYear] = useState('')
 
-    // Error handling
+    // Error + Success handling
     
     const [errorMessage, setErrorMessage] = useState('')
     const [isError, setIsError] = useState(false)
@@ -92,7 +94,7 @@ function AddBook(){
     }
     
     return (
-        <div>
+        <motion.div initial={{x: '-100%'}} animate={{x: '0%', transition: {duration: 0.3}}} exit={{x: '100%', transition: {duration: 0.6}}}>
             <div className="welcome">
                 <h1>Add a Book to our Book Swap</h1>
                 <h3>Enter the book details for your favourite book and we can get this added to our Swap.</h3>
@@ -123,7 +125,7 @@ function AddBook(){
                 {success && <span className='successmessage'>Book has been added!</span>}
                     <input type='submit' id='addsubmit' value='Add Book'/>
             </form>
-        </div>
+        </motion.div>
     )
 }
 

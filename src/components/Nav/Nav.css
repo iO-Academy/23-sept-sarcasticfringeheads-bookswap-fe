@@ -9,7 +9,7 @@ nav {
     left:0;
     right: 0;
     width: 100%;
-    background: rgba(0, 0, 0);
+    background: rgba(0, 0, 0, .8);
     padding: 10px;
     max-height: 100px;
     z-index: 1;

@@ -7,6 +7,7 @@ function BookReviewForm({id, reviews, setReviews}){
         const[review, setReview] = useState('')
         const[isError, setIsError] = useState(false)
         const[errorMessage, setErrorMessage] = useState('')
+        const [success, setSuccess] = useState(false)
 
     function submitReview (event){
         event.preventDefault()
@@ -29,6 +30,7 @@ function BookReviewForm({id, reviews, setReviews}){
                 let new_reviews = reviews.map(review => {
                     return review;
                 })
+                setSuccess(true)
                 new_reviews.push({
                     'name': name,
                     'rating': parseInt(rating),
@@ -46,6 +48,7 @@ function BookReviewForm({id, reviews, setReviews}){
                 // Get the error message from JSON and put it in errormessage state variable.
                 response.json().then(function (response_json) {
                     setIsError(true)
+                    setSuccess(false)
                     setErrorMessage(response_json.message)
                 });
             }
@@ -69,6 +72,7 @@ function BookReviewForm({id, reviews, setReviews}){
             <h2 className="title">Come and Review the Book?</h2>
             <div className="reviewbook">
                 <h2>Book Reviews:</h2>
+                {success && <span className='successmessage'>Review submitted</span>}
                 {isError && <span className='reviewerrormessage'>{errorMessage}</span>}
                 <form onSubmit={submitReview}>
                     <div className='review-form'>

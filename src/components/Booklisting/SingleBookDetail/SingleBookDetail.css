@@ -10,6 +10,7 @@
     flex-direction: column;
     justify-content: space-between;
     align-items:start;
+    margin-left: 7vw;
 }
 
 .display_container.image {
@@ -23,6 +24,7 @@
 
 .display_container.image img {
     height:600px;
+    width: 430px;
     border-radius: 5px;
 }
 
@@ -68,6 +70,11 @@
 
 .book-review-container {
     display: flex;
+    
+}
+
+span.posted-reviews {
+    margin-left: 10vw;
 }
 
 
@@ -79,4 +86,8 @@
         flex-direction: column;
     }
    
+}
+
+#review-column {
+    margin-left: 7vw;
 }
