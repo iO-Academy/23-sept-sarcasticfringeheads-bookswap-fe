@@ -19,6 +19,7 @@ useEffect(() => {
             {roundedReviews2.map(star => {
                 <FaStar />
             })}
+            <FaStar />
             </h4>
             <p>{review}</p>
         </div>

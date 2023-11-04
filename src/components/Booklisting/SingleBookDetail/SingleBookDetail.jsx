@@ -96,7 +96,7 @@ function SingleBookDetail () {
                     <h3>{reviewAverage}/5 Score 
 
                     <span id='x-stars'>
-                    {roundedReviews.map(num => <FaStar size={20} key={Math.floor(Math.random() * 1000)} />
+                    {roundedReviews && roundedReviews.map(num => <FaStar size={20} key={Math.floor(Math.random() * 1000)} />
                         )}
                     </span>
 
