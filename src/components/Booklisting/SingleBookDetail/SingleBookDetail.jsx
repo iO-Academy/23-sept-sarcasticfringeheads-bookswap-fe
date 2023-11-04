@@ -7,7 +7,7 @@ import BookReviewPage from "../../BookReviewPage/BookReviewPage"
 import BookReviewForm from "../../BookReviewForm/BookReviewForm"
 
 import { motion } from "framer-motion"
-
+import { FaStar } from 'react-icons/fa'
 function SingleBookDetail () {
     const [title, setTitle] = useState('')
     const [blurb, setBlurb] = useState('')
@@ -19,9 +19,11 @@ function SingleBookDetail () {
     const [isClaimed, setIsClaimed] = useState(null) // currently redundant but important to not change in case capitilisation is done through css later 
     const {id} = useParams()
     const [capitalName, setCapitalName] = useState(null)
+    
 
     const [reviews, setReviews] = useState([])
     const [reviewAverage, setReviewAverage] = useState(0)
+    const [roundedReviews, setRoundedReviews] = useState([])
     //Store all reviews in a state reivews setReviews
     //separate component to 
 
@@ -61,6 +63,10 @@ function SingleBookDetail () {
             let review_average = total / review_count
             //get the rounded number of review average * 1000 (ie if 2.55910 -> 2559), then divide result by 1000 -> 2.559
             setReviewAverage(Math.round((review_average * 1000)) / 1000)
+            setRoundedReviews(Math.round(review_average))
+            
+            setRoundedReviews(Array.apply(null, Array(Math.round(review_average))))
+
         })
         
     }, [])
@@ -73,6 +79,12 @@ function SingleBookDetail () {
         })
     }, [])
 
+    
+    
+        
+
+    
+
     return (
         <motion.div initial={{y: '-100%'}} animate={{y: '0%', transition: {duration: 0.3}}} exit={{y: ('-100%'), transition: {duration: 0.6}}}>
             <div className="display_container">
@@ -81,7 +93,14 @@ function SingleBookDetail () {
                 </div>
                 <div className= "display_container content">
                     <h1>{title}</h1>
-                    <h3>{reviewAverage}/5 Score &#9733;</h3>
+                    <h3>{reviewAverage}/5 Score 
+
+                    <span id='x-stars'>
+                    {roundedReviews.map(num => <FaStar size={20} key={Math.floor(Math.random() * 1000)} />
+                        )}
+                    </span>
+
+                    </h3>
                     <p><strong>Author:</strong> {author}</p>
                     <p><strong>Published:</strong> {year}</p>
                     <p><strong>Pages:</strong> {pageCount}</p>

@@ -90,5 +90,11 @@ span.posted-reviews {
 }
 
 #review-column {
-    margin-left: 7vw;
+    margin-left: 6vw;
+}
+
+span#x-stars {
+    position: relative;
+    left: 10px;
+    top: 3px;
 }
