@@ -45,7 +45,6 @@ function SingleBookDetail () {
             setGenre(bookData.data.genre.name)
             let myReviews = bookData.data.reviews
             setReviews(myReviews)
-
             let claimed = (bookData.data.claimed_by_name) //if claimed_by_name returns a string (not null
             if (claimed) { 
                 setCapitalName (claimed.charAt(0).toUpperCase() + claimed.slice(1)) // set capitalName to capitalised version of claimed
@@ -64,8 +63,10 @@ function SingleBookDetail () {
             //get the rounded number of review average * 1000 (ie if 2.55910 -> 2559), then divide result by 1000 -> 2.559
             setReviewAverage(Math.round((review_average * 1000)) / 1000)
             setRoundedReviews(Math.round(review_average))
-            
-            setRoundedReviews(Array.apply(null, Array(Math.round(review_average))))
+            if (reviewAverage > 0) {
+                setRoundedReviews(Array.apply(null, Array(Math.round(review_average))))
+            }
+
 
         })
         
@@ -93,20 +94,22 @@ function SingleBookDetail () {
                 </div>
                 <div className= "display_container content">
                     <h1>{title}</h1>
-                    <h3>{reviewAverage}/5 Score 
+                    {!isNaN(reviewAverage) && (
+                        <h3> {reviewAverage}/5 Score 
 
                     <span id='x-stars'>
                     {roundedReviews && roundedReviews.map(num => <FaStar size={20} key={Math.floor(Math.random() * 1000)} />
                         )}
                     </span>
 
-                    </h3>
+                    </h3> )}
                     <p><strong>Author:</strong> {author}</p>
                     <p><strong>Published:</strong> {year}</p>
                     <p><strong>Pages:</strong> {pageCount}</p>
                     <p><strong>Genre:</strong> {genre}</p>
+                    {blurb && blurb != '' && (<span>
                     <p><strong>Blurb:</strong></p>
-                    <p className="blurb">{blurb}</p>
+                    <p className="blurb">{blurb}</p></span>)}
                     <div className="claimedBookForm">        
                     {!capitalName && <ClaimBookForm bookClaim={setCapitalName} id={id}/> }
                     {capitalName && <p><strong>Claimed by:&nbsp;</strong> {capitalName}</p>}
@@ -120,16 +123,23 @@ function SingleBookDetail () {
                 <BookReviewForm reviews={reviews} setReviews={setReviews} id={id}/>
             </div>
                 <section id='review-column'>
+                    {reviews && reviews.length > 0 ?
+                    ( <section id='review-column'>
                     <h1 className="review-title">Reviews</h1>
-                    {reviews.map(review =>
-                        <BookReviewPage
-                            key={review.id}
-                            id={review.id}
-                            name={review.name}
-                            rating={review.rating}
-                            review={review.review}
-                        />
+                        {reviews.map(review =>
+                            <BookReviewPage
+                                key={review.id}
+                                id={review.id}
+                                name={review.name}
+                                rating={review.rating}
+                                review={review.review}
+                            />
+                        )}
+                        </section>
+                    ) : (
+                        <h1 className="review-title">No Reviews To Show Yet!</h1>
                     )}
+                    
                 </section>
             </div>
         </motion.div>
