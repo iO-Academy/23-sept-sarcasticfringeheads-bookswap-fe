@@ -16,7 +16,7 @@ useEffect(() => {
             <h3>{name}</h3>
             <h4>Score:&nbsp;{rating}/5 Stars 
             
-            {roundedReviews2 && roundedReviews2.map(star => {
+            {roundedReviews2.length > 0 && roundedReviews2.map(star => {
                 <FaStar />
             })}
             <FaStar />
