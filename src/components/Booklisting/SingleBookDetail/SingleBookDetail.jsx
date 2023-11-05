@@ -113,7 +113,7 @@ function SingleBookDetail () {
                     <div className="claimedBookForm">        
                     {!capitalName && <ClaimBookForm bookClaim={setCapitalName} id={id}/> }
                     {capitalName && <p><strong>Claimed by:&nbsp;</strong> {capitalName}</p>}
-                    {capitalName && <BookReturnForm bookClaim={setCapitalName} id={id}/>}
+                    {capitalName && <BookReturnForm name={capitalName} bookClaim={setCapitalName} id={id}/>}
                     </div>   
                 </div>
 

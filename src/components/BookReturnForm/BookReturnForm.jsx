@@ -1,7 +1,7 @@
 import { useState } from "react"
 import "./BookReturnForm.css"
 
-function BookReturnForm ({id, bookClaim}) {
+function BookReturnForm ({id, bookClaim, name}) {
     const [email, setEmail] = useState ('')
     const [isError, setIsError] = useState(false)
     const [errorMessage, setErrorMessage] = useState([])
@@ -44,9 +44,9 @@ function BookReturnForm ({id, bookClaim}) {
             <h2>Would you like to return this book?</h2>
             {isError && <span className='errormessage'>{errorMessage}</span>}
             <form onSubmit={submitReturn}>
-                <label htmlFor="emailReturn">Email</label>
+                <label htmlFor="emailReturn">Please enter {name}'s email</label>
                 <input type="email" id='emailReturn' value={email} onChange={(e) => setEmail(e.target.value)} />
-                <input id='submitReturn' type="submit" />
+                <input id='submitReturn' value='Return Book' type="submit" />
             </form>
         </div>
     )

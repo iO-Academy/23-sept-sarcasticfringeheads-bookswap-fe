@@ -95,7 +95,7 @@ function BookReviewForm({id, reviews, setReviews}){
                         <textarea id='review' placeholder='Review' value={review} onChange={ChangeReview}></textarea> 
                             <br />
                             <br />
-                            <input id='review-submit-button' className="claimSubmit" type='submit' value='Submit'></input>
+                            <input id='review-submit-button' className="claimSubmit" type='submit' value='Submit Review'></input>
                     </div>    
                 </form>
             </div>
