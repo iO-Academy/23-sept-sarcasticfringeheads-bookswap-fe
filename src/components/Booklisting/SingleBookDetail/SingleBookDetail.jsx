@@ -77,7 +77,7 @@ function SingleBookDetail () {
             left: 0,
             behaviour: 'smooth',
         })
-    }, 100)
+    }, 10)
 
     let placeholder_image = '../../src/assets/images/classic_red_book_cover_by_semireal_stock_d1u2rbq-375w-2x.jpg' 
         
