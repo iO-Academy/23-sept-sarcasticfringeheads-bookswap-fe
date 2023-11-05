@@ -100,6 +100,12 @@ function AddBook(){
             behaviour: 'smooth',
         })
     }, [])
+
+    useEffect(() => {
+        if (errorMessage == 'The genre id field is required.') {
+            setErrorMessage('The genre field is required')
+        }
+    }, [errorMessage])
     
     return (
         <motion.div initial={{x: '-100%'}} animate={{x: '0%', transition: {duration: 0.3}}} exit={{x: '100%', transition: {duration: 0.6}}} id='add-book-wrapper'>
