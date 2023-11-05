@@ -1,10 +1,10 @@
 
 .claim-book {
-    width: 250px;
+    width: 420px;
     height: auto;
     background-color: rgb(179, 159, 159);
     border-radius: 5px;
-    padding: 20px;
+    padding: 25px 20px 25px 40px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
@@ -27,6 +27,8 @@
 
 .claim-book-details h3 {
     margin-top: -5px;
+    position: relative;
+    right: 17%;
     
 }
 
@@ -58,7 +60,7 @@ form.claim-book input {
 
 #claim-this-book-submit {
     position: relative;
-    left: 26px;
-    width: 77%;
+    left: 31px;
+    width: 74%;
 }
 

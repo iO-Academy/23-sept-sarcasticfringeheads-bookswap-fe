@@ -91,7 +91,7 @@ function BookReviewForm({id, reviews, setReviews}){
                             </select>
                             <br />
                             <br />
-                        <label className="review">Review:</label>
+                        <label id='review-label-3' className="review">Review:</label>
                         <textarea id='review' placeholder='Review' value={review} onChange={ChangeReview}></textarea> 
                             <br />
                             <br />

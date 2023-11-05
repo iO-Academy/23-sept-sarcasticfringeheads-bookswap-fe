@@ -44,8 +44,8 @@ function BookReturnForm ({id, bookClaim, name}) {
             <h2>Would you like to return this book?</h2>
             {isError && <span className='errormessage'>{errorMessage}</span>}
             <form onSubmit={submitReturn}>
-                <label htmlFor="emailReturn">Please enter {name}'s email</label>
-                <input type="email" id='emailReturn' value={email} onChange={(e) => setEmail(e.target.value)} />
+                <label htmlFor="emailReturn">Please enter {name}'s email:</label>
+                <input type="email" id='emailReturn' placeholder='Email@Email.com' value={email} onChange={(e) => setEmail(e.target.value)} />
                 <input id='submitReturn' value='Return Book' type="submit" />
             </form>
         </div>

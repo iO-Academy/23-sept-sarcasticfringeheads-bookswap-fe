@@ -67,11 +67,23 @@
     src: url(../../assets/fonts/Quattrocento-Regular.ttf) format('truetype')
 }
 
-body, html {
-    font-family: 'lora'
+@font-face {
+    font-family: 'playfair';
+    src: url(../../assets/fonts/PlayfairDisplay-VariableFont_wght.ttf) format('truetype')
+}
+body, html, h1 {
+    font-family: 'playfair'
 }
 
-h1, h2, h3, h4 {
+ h2, h3, h4, nav a {
+    font-family: 'playfair';
+}
+
+p {
     font-family: 'quattroreg';
+}
+
+body {
+    font-size: 1.2rem
 }
 

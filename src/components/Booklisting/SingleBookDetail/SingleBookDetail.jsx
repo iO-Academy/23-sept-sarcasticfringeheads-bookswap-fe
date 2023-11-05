@@ -27,8 +27,6 @@ function SingleBookDetail () {
     //Store all reviews in a state reivews setReviews
     //separate component to 
 
-
-
     useEffect (function(){
         fetch('https://book-swap-api.dev.io-academy.uk/api/books/' +id)
         .then(function(res){
@@ -106,10 +104,10 @@ function SingleBookDetail () {
 
                         </h3> )}
                         {/* end of average rating: x/5 *** */}
-                        
+
                         <p><strong>Author:</strong> {author}</p>
-                        <p><strong>Published:</strong> {year}</p>
-                        <p><strong>Pages:</strong> {pageCount}</p>
+                       {year && <p><strong>Published:</strong> {year}</p> }
+                       {pageCount && <p><strong>Pages:</strong> {pageCount}</p> }
                         <p><strong>Genre:</strong> {genre}</p>
                         {blurb && blurb != '' && (<span>
                         
