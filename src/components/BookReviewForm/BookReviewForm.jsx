@@ -69,7 +69,7 @@ function BookReviewForm({id, reviews, setReviews}){
 
     return (
         <>
-            <h2 className="title">Come and Review the Book?</h2>
+            <h2 className="title" id='come-and-review'>Come and Review the Book?</h2>
             <div className="reviewbook">
                 <h2>Your Review:</h2>
                 {success && <span className='successmessage'>Review submitted</span>}
