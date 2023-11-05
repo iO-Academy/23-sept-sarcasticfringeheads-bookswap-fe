@@ -12,11 +12,10 @@ useEffect(() => {
     return (
         <div className="reviewBox">
             <h3>{name}</h3>
-            <h4>Rating:
-            <span id='review-stars'>
-            {whyAmINeeded.length > 0 && whyAmINeeded.map(item => (<FaStar key={Math.floor(Math.random() * 10000)} />))}
-            </span>
-            </h4>
+            {whyAmINeeded.length > 0 && ( <h4>Rating:<span id='review-stars'>
+                {whyAmINeeded.map(item => (<FaStar key={Math.floor(Math.random() * 10000)} />))}
+                </span>
+            </h4>   )}
             <p>{review}</p>
         </div>
     )}
