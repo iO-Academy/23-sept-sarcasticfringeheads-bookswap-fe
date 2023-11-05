@@ -24,6 +24,22 @@
         position: relative;
 }
 
+@media screen and (max-width: 750px) {
+    .welcome {
+        background: rgb(234, 234, 234);
+        height: 500px;
+        padding-top: 20px; 
+    }
+}
+
+@media screen and (max-width: 372px) {
+    .welcome {
+        background: rgb(234, 234, 234);
+        height: 650px;
+        padding-top: 20px; 
+    }
+}
+
 
 .welcome h1 {
     font-size: 70px;

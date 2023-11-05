@@ -109,8 +109,8 @@ function AddBook(){
     
     return (
         <motion.div initial={{x: '-100%'}} animate={{x: '0%', transition: {duration: 0.3}}} exit={{x: '100%', transition: {duration: 0.6}}} id='add-book-wrapper'>
-            <div className="welcome">
-             <motion.h1 initial={{opacity: 0, y: -40}} animate={{opacity: 1, y: 0}} transition={{duration: 1}}>Add a Book to our Book Swap</motion.h1>
+            <div id='add-welcome' className="welcome">
+             <motion.h1 id='add-h1' initial={{opacity: 0, y: -40}} animate={{opacity: 1, y: 0}} transition={{duration: 1}}>Add a Book to our Book Swap</motion.h1>
                 <h3>Enter the book details for your favourite book and we can get this added to our Swap.</h3>
                 <span></span>
             </div> 

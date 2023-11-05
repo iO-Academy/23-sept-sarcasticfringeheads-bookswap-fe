@@ -47,7 +47,13 @@
     align-items: center;
     margin-top: 0px;
 }
+@media screen and (max-width: 800px) {
+    .display_container form {
+       padding: 20px;
+    }
 
+    
+}
 .claimedBookForm p {
     width: 250px;
     height: auto;
@@ -98,6 +104,18 @@ span.posted-reviews {
     .book-review-container {
         flex-direction: column;
     }
+    span.posted-reviews {
+        margin-left: 0vw;
+    }
+
+    .claimedBookForm p {
+        width: 300px;
+        position: relative;
+        right: 20px;
+    }
+
+    
+    
    
 }
 
@@ -124,5 +142,22 @@ p.blurb {
 #book-info-wrapper {
     display: flex;
     flex-direction: column;
+
+}
+
+@media screen and (max-width: 400px) {
+    #single-book-detail-wrapper {
+        max-width: 400px;
+    }
+
+    .display_container img {
+        max-width: 300px;
+        max-height: 500px;
+        box-shadow: none;
+        border-radius: 0px;
+        gap: 0px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 0px 0px;
+    }
+    
 
 }

@@ -70,13 +70,14 @@ function SingleBookDetail () {
         
     }, [])
 
-    useEffect(() => {
+
+    setTimeout(() => {
         window.scroll({
             top: 0,
             left: 0,
             behaviour: 'smooth',
         })
-    }, [])
+    }, 100)
 
     let placeholder_image = '../../src/assets/images/classic_red_book_cover_by_semireal_stock_d1u2rbq-375w-2x.jpg' 
         
@@ -84,14 +85,14 @@ function SingleBookDetail () {
     
 
     return (
-        <motion.div initial={{y: '-100%'}} animate={{y: '0%', transition: {duration: 0.3}}} exit={{y: ('-100%'), transition: {duration: 0.6}}}>
+        <motion.div id='single-book-detail-wrapper' initial={{y: '-100%'}} animate={{y: '0%', transition: {duration: 0.3}}} exit={{y: ('-100%'), transition: {duration: 0.6}}}>
             <div className="display_container">
                 <div className="display_container image">
                     {image ? ( <img src={image} alt={title} /> ) : (<img src={placeholder_image} alt={title} />) }
                     
                 </div>
                 <div className= "display_container content">
-                    <h1>{title}</h1>
+                    <h1 id='detail-title'>{title}</h1>
 
                     <span id='book-info-wrapper'>
                         {!isNaN(reviewAverage) && (

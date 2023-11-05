@@ -41,10 +41,9 @@ function ClaimedBooks() {
 
     return (
         <motion.div initial={{x: '-100%'}} animate={{x: '0%', transition: {duration: 0.3}}} exit={{x: '100%', transition: {duration: 0.6}}}>
-        <div className="welcome">
-        <motion.h1 initial={{opacity: 0, y: -40}} animate={{opacity: 1, y: 0}} transition={{duration: 1}}>You missed your chance!</motion.h1>
-            <h3>The following books have already been claimed, but don't worry, feel free to have a look, if you would like to return a book please do so by entering your email on the book page.</h3>
-            <span></span>
+        <div id='claimed-welcome' className="welcome">
+            <motion.h1 id='claimed-h1' initial={{opacity: 0, y: -40}} animate={{opacity: 1, y: 0}} transition={{duration: 1}}>You missed your chance!</motion.h1>
+                <h3>The following books have already been claimed, but don't worry, feel free to have a look, if you would like to return a book please do so by entering your email on the book page.</h3>
         </div> 
 
         <div className="filter">

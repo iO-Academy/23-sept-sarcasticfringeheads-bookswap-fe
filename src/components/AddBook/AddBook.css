@@ -29,3 +29,34 @@ span.successmessage {
     color: green;
 }
 
+
+
+/* #add-h1 */
+
+@media screen and (max-width: 950px) {
+    #add-welcome {
+        height: 500px
+    }
+
+    #add-h1 {
+        
+    }
+}
+
+@media screen and (max-width: 490px) {
+    #add-welcome {
+
+    }
+
+    #add-h1 {
+        font-size: 3rem;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    
+    #add-h1 {
+        margin-top: 150px;
+    }
+}
+
