@@ -71,7 +71,7 @@ function BookReviewForm({id, reviews, setReviews}){
         <>
             <h2 className="title">Come and Review the Book?</h2>
             <div className="reviewbook">
-                <h2>Book Reviews:</h2>
+                <h2>Your Review:</h2>
                 {success && <span className='successmessage'>Review submitted</span>}
                 {isError && <span className='reviewerrormessage'>{errorMessage}</span>}
                 <form onSubmit={submitReview}>

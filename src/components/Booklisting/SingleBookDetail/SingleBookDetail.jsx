@@ -94,22 +94,27 @@ function SingleBookDetail () {
                 </div>
                 <div className= "display_container content">
                     <h1>{title}</h1>
-                    {!isNaN(reviewAverage) && (
-                        <h3> <strong>Average Rating: {reviewAverage}<span id='mini-text'>/5</span></strong> 
 
-                    <span id='x-stars'>
-                    {roundedReviews.length > 0 && roundedReviews.map(num => <FaStar size={20} key={Math.floor(Math.random() * 1000)} />
-                        )}
+                    <span id='book-info-wrapper'>
+                        {!isNaN(reviewAverage) && (
+                            <h3> <strong>Average Rating: {reviewAverage}<span id='mini-text'>/5</span></strong> 
+
+                        <span id='x-stars'>
+                            {roundedReviews.length > 0 && roundedReviews.map(num => <FaStar size={20} key={Math.floor(Math.random() * 1000)} />
+                                )}
+                        </span>
+
+                        </h3> )}
+                        {/* end of average rating: x/5 *** */}
+                        
+                        <p><strong>Author:</strong> {author}</p>
+                        <p><strong>Published:</strong> {year}</p>
+                        <p><strong>Pages:</strong> {pageCount}</p>
+                        <p><strong>Genre:</strong> {genre}</p>
+                        {blurb && blurb != '' && (<span>
+                        
+                        <p className="blurb"><strong>Blurb: </strong>{blurb}</p></span>)}
                     </span>
-
-                    </h3> )}
-                    <p><strong>Author:</strong> {author}</p>
-                    <p><strong>Published:</strong> {year}</p>
-                    <p><strong>Pages:</strong> {pageCount}</p>
-                    <p><strong>Genre:</strong> {genre}</p>
-                    {blurb && blurb != '' && (<span>
-                    <p><strong>Blurb:</strong></p>
-                    <p className="blurb">{blurb}</p></span>)}
                     <div className="claimedBookForm">        
                     {!capitalName && <ClaimBookForm bookClaim={setCapitalName} id={id}/> }
                     {capitalName && <p><strong>Claimed by:&nbsp;</strong> {capitalName}</p>}

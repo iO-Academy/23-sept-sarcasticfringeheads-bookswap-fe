@@ -36,6 +36,7 @@
 .display_container.content h1 {
     font-size: 50px;
     margin-top: 0px;
+    margin-bottom: 0px;
 }
 
 .display_container form {
@@ -103,4 +104,8 @@ span#x-stars {
     font-size: .9rem;
     position: relative;
     top: 1px;
+}
+
+p.blurb {
+    max-width: 45ch;
 }

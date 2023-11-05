@@ -10,13 +10,14 @@
     width: 410px;
     background-color: rgb(179, 159, 159);
     border-radius: 5px;
-    padding: 10px;
+    padding: 5px 10px 20px 10px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     margin-left: 40px;
 }
 .reviewbook h2{
-    text-align: left;
     font-size: x-large;
+    position: relative;
+    left: 20%;
 }
 
 .claimSubmit{
