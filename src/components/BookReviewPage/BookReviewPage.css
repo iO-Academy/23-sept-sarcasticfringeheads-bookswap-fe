@@ -18,3 +18,9 @@
     border-bottom: 1px solid black;
     padding-bottom: 10px;   
 }
+
+#review-stars {
+    position: relative;
+    left: 10px;
+    top: 4px;
+}

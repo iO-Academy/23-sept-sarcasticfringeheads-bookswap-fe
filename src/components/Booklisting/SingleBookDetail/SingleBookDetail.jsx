@@ -69,7 +69,6 @@ function SingleBookDetail () {
 
 
         })
-        console.log(roundedReviews)
         
     }, [])
 
@@ -81,8 +80,7 @@ function SingleBookDetail () {
         })
     }, [])
 
-    
-    
+    let placeholder_image = '../../src/assets/images/classic_red_book_cover_by_semireal_stock_d1u2rbq-375w-2x.jpg' 
         
 
     
@@ -91,12 +89,13 @@ function SingleBookDetail () {
         <motion.div initial={{y: '-100%'}} animate={{y: '0%', transition: {duration: 0.3}}} exit={{y: ('-100%'), transition: {duration: 0.6}}}>
             <div className="display_container">
                 <div className="display_container image">
-                    <img src={image} alt={title} />
+                    {image ? ( <img src={image} alt={title} /> ) : (<img src={placeholder_image} alt={title} />) }
+                    
                 </div>
                 <div className= "display_container content">
                     <h1>{title}</h1>
                     {!isNaN(reviewAverage) && (
-                        <h3> {reviewAverage}/5 Score 
+                        <h3> <strong>Average Rating: {reviewAverage}<span id='mini-text'>/5</span></strong> 
 
                     <span id='x-stars'>
                     {roundedReviews.length > 0 && roundedReviews.map(num => <FaStar size={20} key={Math.floor(Math.random() * 1000)} />

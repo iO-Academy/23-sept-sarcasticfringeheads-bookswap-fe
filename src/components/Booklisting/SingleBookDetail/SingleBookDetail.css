@@ -98,3 +98,7 @@ span#x-stars {
     left: 10px;
     top: 3px;
 }
+
+#mini-text {
+    font-size: .9rem
+}
