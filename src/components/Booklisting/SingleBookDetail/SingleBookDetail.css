@@ -100,5 +100,7 @@ span#x-stars {
 }
 
 #mini-text {
-    font-size: .9rem
+    font-size: .9rem;
+    position: relative;
+    top: 1px;
 }

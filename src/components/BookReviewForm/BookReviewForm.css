@@ -23,8 +23,9 @@
     border-radius: 5px;
     border: none;
     margin-top: 8px;
-    width: 100%;
+    width: 80%;
     padding: 5px;
+
 }
 
 .reviewbook textarea{
@@ -60,4 +61,10 @@ span.reviewerrormessage {
     color: red;
     display: block;
     margin-bottom: 12px;
+}
+
+#review-submit-button {
+    position: relative;
+    left: 77px;
+    width: 75%;
 }
