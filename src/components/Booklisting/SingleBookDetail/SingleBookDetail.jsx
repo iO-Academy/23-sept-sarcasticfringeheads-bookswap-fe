@@ -63,12 +63,13 @@ function SingleBookDetail () {
             //get the rounded number of review average * 1000 (ie if 2.55910 -> 2559), then divide result by 1000 -> 2.559
             setReviewAverage(Math.round((review_average * 1000)) / 1000)
             setRoundedReviews(Math.round(review_average))
-            if (reviewAverage > 0) {
+            if (review_average > 0) {
                 setRoundedReviews(Array.apply(null, Array(Math.round(review_average))))
             }
 
 
         })
+        console.log(roundedReviews)
         
     }, [])
 
