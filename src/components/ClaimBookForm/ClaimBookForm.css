@@ -40,6 +40,7 @@ span.errormessage {
     color: red;
     padding: 0px;
     margin: 0px;
+    margin-left: 27px;
 }
 
 form.claim-book input {
