@@ -24,6 +24,22 @@
         position: relative;
 }
 
+@media screen and (max-width: 750px) {
+    .welcome {
+        background: rgb(234, 234, 234);
+        height: 500px;
+        padding-top: 20px; 
+    }
+}
+
+@media screen and (max-width: 372px) {
+    .welcome {
+        background: rgb(234, 234, 234);
+        height: 650px;
+        padding-top: 20px; 
+    }
+}
+
 
 .welcome h1 {
     font-size: 70px;
@@ -50,4 +66,39 @@
 
 #root{
     width: 100%;
+}
+
+@font-face {
+    font-family: 'lora';
+    src: url(../../assets/fonts/Lora-VariableFont_wght.ttf) format('truetype')
+}
+
+@font-face {
+    font-family: 'quattrobold';
+    src: url(../../assets/fonts/Quattrocento-Bold.ttf) format('truetype')
+}
+
+@font-face {
+    font-family: 'quattroreg';
+    src: url(../../assets/fonts/Quattrocento-Regular.ttf) format('truetype')
+}
+
+@font-face {
+    font-family: 'playfair';
+    src: url(../../assets/fonts/PlayfairDisplay-VariableFont_wght.ttf) format('truetype')
+}
+body, html, h1 {
+    font-family: 'playfair'
+}
+
+ h2, h3, h4, nav a {
+    font-family: 'playfair';
+}
+
+p {
+    font-family: 'quattroreg';
+}
+
+body {
+    font-size: 1.2rem
 }

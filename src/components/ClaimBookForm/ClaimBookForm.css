@@ -1,34 +1,38 @@
 
-.claim-book{
-    width: 250px;
-    height: 150px;
+.claim-book {
+    width: 420px;
+    height: auto;
     background-color: rgb(179, 159, 159);
     border-radius: 5px;
-    padding: 10px;
+    padding: 25px 20px 25px 40px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
-.claim-book-details{
+.claim-book-details {
     display: flex;
     flex-direction: column;
     gap: 10px;
     margin-left: -35px;
+    align-items: center;
+    align-content: center;
     
 }
 
-.claimSubmit{
+.claimSubmit {
     margin-top: 8px;
-    width: 40%;
     border-radius: 5px;
     border: none;
+    position: relative;
 }
 
-.claim-book-details h3{
+.claim-book-details h3 {
     margin-top: -5px;
+    position: relative;
+    right: 17%;
     
 }
 
-#name, #email{
+#name, #email {
     border-radius: 2px;
     border: none;
     margin-left: 4px;
@@ -38,4 +42,25 @@ span.errormessage {
     color: red;
     padding: 0px;
     margin: 0px;
+    margin-left: 27px;
 }
+
+form.claim-book input {
+    padding: 5px;
+}
+
+#emailClaim {
+    margin-left: 3px;
+}
+
+#name-label {
+    position: relative;
+    right: 3px;    
+}
+
+#claim-this-book-submit {
+    position: relative;
+    left: 31px;
+    width: 74%;
+}
+

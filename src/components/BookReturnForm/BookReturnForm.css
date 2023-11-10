@@ -1,11 +1,22 @@
 .return-book-form{
     width: 250px;
-    height: 150px;
+    height: auto;
     background-color: rgb(179, 159, 159);
     border-radius: 5px;
     padding: 10px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.return-book-form {
+    width: 420px;
+    height: auto;
+    background-color: rgb(179, 159, 159);
+    border-radius: 5px;
+    padding: 25px 20px 25px 40px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .return-book-form h2{
@@ -20,4 +31,16 @@
 .return-book-form #submitReturn{
     border-radius: 5px;
     margin-top: 3px;
+}
+
+div.return-book-form form label {
+    padding: 10px 0px 10px 0px;
+}
+div.return-book-form form input {
+    margin: 10px 0px 10px 0px; 
+    padding: 2px 2px 2px 2px;
+}
+
+div.return-book-form {
+    padding: 20px;
 }

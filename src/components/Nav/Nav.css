@@ -9,10 +9,17 @@ nav {
     left:0;
     right: 0;
     width: 100%;
-    background: rgba(0, 0, 0);
+    background: rgba(0, 0, 0, .8);
     padding: 10px;
     max-height: 100px;
     z-index: 1;
+}
+
+@media screen and (max-width: 400px) {
+    nav {
+        justify-content: flex-start;
+        
+    }
 }
 
 nav ul {
@@ -27,7 +34,9 @@ nav ul {
 
 @media screen and (max-width: 400px) {
     nav ul {
-        font-size: 2rem;
+        justify-content: flex-start;
+        padding: 0px;
+        margin-left: -20px
     }
 }
 
@@ -51,4 +60,14 @@ nav ul a:hover {
 
 nav ul a.active {
     color: rgb(0, 238, 255);
+}
+
+@media screen and (max-width: 400px) {
+    nav ul {
+        font-size: 2rem;
+        padding-right: 0px;
+    }
+    nav ul a {
+        padding: 0px 4px;
+    }
 }

@@ -10,6 +10,7 @@
     flex-direction: column;
     justify-content: space-between;
     align-items:start;
+    margin-left: 7vw;
 }
 
 .display_container.image {
@@ -23,17 +24,19 @@
 
 .display_container.image img {
     height:600px;
+    width: 430px;
     border-radius: 5px;
 }
 
 .display_container.content p {
     font-size: 20px;
-    margin:0px;
+    margin: 10px 0px 10px 0px;
 }
 
 .display_container.content h1 {
     font-size: 50px;
     margin-top: 0px;
+    margin-bottom: 0px;
 }
 
 .display_container form {
@@ -44,18 +47,36 @@
     align-items: center;
     margin-top: 0px;
 }
+@media screen and (max-width: 800px) {
+    .display_container form {
+       padding: 20px;
+    }
 
+    
+}
 .claimedBookForm p {
     width: 250px;
-    height: 50px;
+    height: auto;
     background-color: rgb(179, 159, 159);
     border-radius: 5px;
-    padding: 10px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 0;
+    padding: 20px;
+    margin: 100px;
+}
+.claimedBookForm p {
+    width: 400px;
+    height: auto;
+    background-color: rgb(179, 159, 159);
+    border-radius: 5px;
+    padding: 25px 20px 25px 40px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.claimedBookForm input {
+    width: 60%;
 }
 
 .review-title{
@@ -68,6 +89,11 @@
 
 .book-review-container {
     display: flex;
+    
+}
+
+span.posted-reviews {
+    margin-left: 10vw;
 }
 
 
@@ -78,5 +104,60 @@
     .book-review-container {
         flex-direction: column;
     }
+    span.posted-reviews {
+        margin-left: 0vw;
+    }
+
+    .claimedBookForm p {
+        width: 300px;
+        position: relative;
+        right: 20px;
+    }
+
+    
+    
    
+}
+
+#review-column {
+    margin-left: 3vw;
+}
+
+span#x-stars {
+    position: relative;
+    left: 10px;
+    top: 3px;
+}
+
+#mini-text {
+    font-size: .9rem;
+    position: relative;
+    top: 1px;
+}
+
+p.blurb {
+    max-width: 480px;
+}
+
+#book-info-wrapper {
+    display: flex;
+    flex-direction: column;
+
+}
+
+@media screen and (max-width: 400px) {
+    #single-book-detail-wrapper {
+        max-width: 400px;
+    }
+
+    .display_container img {
+        max-width: 300px;
+        max-height: 500px;
+        box-shadow: none;
+        border-radius: 0px;
+        gap: 0px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 0px 0px;
+    }
+    
+
 }

@@ -18,3 +18,15 @@
     border-bottom: 1px solid black;
     padding-bottom: 10px;   
 }
+
+#review-stars {
+    position: relative;
+    left: 10px;
+    top: 4px;
+}
+
+input {
+    font-size: 1rem;
+    padding: 2px 0px 2px 0px;
+    font-family: inherit;
+}

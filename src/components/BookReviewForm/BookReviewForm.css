@@ -1,4 +1,4 @@
-.title{
+.title {
     text-align: left;
     font-size: xx-large;
     margin-left: 35px;
@@ -6,53 +6,56 @@
 }
 
 
-.reviewbook{
+.reviewbook {
     width: 410px;
     background-color: rgb(179, 159, 159);
     border-radius: 5px;
-    padding: 10px;
+    padding: 5px 10px 25px 10px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     margin-left: 40px;
 }
-.reviewbook h2{
-    text-align: left;
+.reviewbook h2 {
     font-size: x-large;
+    position: relative;
+    left: 1%;
+    padding-bottom: 5%;
 }
 
-.claimSubmit{
+.claimSubmit {
     border-radius: 5px;
     border: none;
     margin-top: 8px;
-    width: 100%;
+    width: 80%;
     padding: 5px;
+
 }
 
-.reviewbook textarea{
+.reviewbook textarea {
     resize: vertical;
     border: none;
     margin-left: 10px;
 }
 
-.review{
+.review {
     border-radius: 2px;
     border: none;
     margin-left: 4px;
     font-size: large;
 }
 
-#score{
+#score {
     border: none;
     margin-left: 17px;
     width: 180px;
 }
 
-#name-review{
+#name-review {
     border: none;
     margin-left: 21px;
     width: 180px;
 }
 
-#id{
+#id {
     text-wrap: wrap;
 }
 
@@ -61,3 +64,34 @@ span.reviewerrormessage {
     display: block;
     margin-bottom: 12px;
 }
+
+#review-submit-button {
+    position: relative;
+    left: 77px;
+    width: 75%;
+}
+
+#review-label-3 {
+    position: relative;
+    bottom: 35px;
+}
+
+#come-and-review {
+        width: 20ch;
+        animation: typing 2s steps(20), blink .5s step-end infinite alternate;
+        white-space: nowrap;
+        overflow: hidden;
+        border-right: 3px solid;
+}
+
+@keyframes typing {
+    from {
+      width: 0
+    }
+  }
+      
+  @keyframes blink {
+    50% {
+      border-color: transparent
+    }
+  }
