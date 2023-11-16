@@ -11,7 +11,7 @@ import { FaStar } from 'react-icons/fa'
 function SingleBookDetail () {
     const [title, setTitle] = useState('')
     const [blurb, setBlurb] = useState('')
-    const [image, setImage] = useState ('')
+    const [image, setImage] = useState ('../../src/assets/images/classic_red_book_cover_by_semireal_stock_d1u2rbq-375w-2x.jpg')
     const [pageCount, setPageCount] = useState('')
     const [year, setYear] = useState ('')
     const [author, setAuthor] = useState('')
