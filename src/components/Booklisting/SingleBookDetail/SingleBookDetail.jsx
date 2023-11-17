@@ -11,7 +11,7 @@ import { FaStar } from 'react-icons/fa'
 function SingleBookDetail () {
     const [title, setTitle] = useState('')
     const [blurb, setBlurb] = useState('')
-    const [image, setImage] = useState ('')
+    const [image, setImage] = useState ('../../src/assets/images/classic_red_book_cover_by_semireal_stock_d1u2rbq-375w-2x.jpg')
     const [pageCount, setPageCount] = useState('')
     const [year, setYear] = useState ('')
     const [author, setAuthor] = useState('')
@@ -59,17 +59,13 @@ function SingleBookDetail () {
             })
             let review_average = total / review_count
             //get the rounded number of review average * 1000 (ie if 2.55910 -> 2559), then divide result by 1000 -> 2.559
-            setReviewAverage(Math.round((review_average * 1000)) / 1000)
+            setReviewAverage(Math.round((review_average * 10)) / 10)
             setRoundedReviews(Math.round(review_average))
             if (review_average > 0) {
                 setRoundedReviews(Array.apply(null, Array(Math.round(review_average))))
             }
-
-
         })
-        
     }, [])
-
 
     setTimeout(() => {
         window.scroll({
@@ -81,9 +77,6 @@ function SingleBookDetail () {
 
     let placeholder_image = '../../src/assets/images/classic_red_book_cover_by_semireal_stock_d1u2rbq-375w-2x.jpg' 
         
-
-    
-
     return (
         <motion.div id='single-book-detail-wrapper' initial={{y: '-100%'}} animate={{y: '0%', transition: {duration: 0.3}}} exit={{y: ('-100%'), transition: {duration: 0.6}}}>
             <div className="display_container">
