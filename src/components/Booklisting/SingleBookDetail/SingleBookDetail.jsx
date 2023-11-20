@@ -8,10 +8,12 @@ import BookReviewForm from "../../BookReviewForm/BookReviewForm"
 
 import { motion } from "framer-motion"
 import { FaStar } from 'react-icons/fa'
+import placeholder_image from '../../../assets/images/classic_red_book_cover_by_semireal_stock_d1u2rbq-375w-2x.jpg'
+
 function SingleBookDetail () {
     const [title, setTitle] = useState('')
     const [blurb, setBlurb] = useState('')
-    const [image, setImage] = useState ('../../src/assets/images/classic_red_book_cover_by_semireal_stock_d1u2rbq-375w-2x.jpg')
+    const [image, setImage] = useState (placeholder_image)
     const [pageCount, setPageCount] = useState('')
     const [year, setYear] = useState ('')
     const [author, setAuthor] = useState('')
@@ -24,8 +26,8 @@ function SingleBookDetail () {
     const [reviews, setReviews] = useState([])
     const [reviewAverage, setReviewAverage] = useState(0)
     const [roundedReviews, setRoundedReviews] = useState([])
-    //Store all reviews in a state reivews setReviews
-    //separate component to 
+    
+    
 
     useEffect (function(){
         fetch('https://book-swap-api.dev.io-academy.uk/api/books/' +id)
@@ -74,8 +76,6 @@ function SingleBookDetail () {
             behaviour: 'smooth',
         })
     }, 10)
-
-    let placeholder_image = '../../src/assets/images/classic_red_book_cover_by_semireal_stock_d1u2rbq-375w-2x.jpg' 
         
     return (
         <motion.div id='single-book-detail-wrapper' initial={{y: '-100%'}} animate={{y: '0%', transition: {duration: 0.3}}} exit={{y: ('-100%'), transition: {duration: 0.6}}}>
