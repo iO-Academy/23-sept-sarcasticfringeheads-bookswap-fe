@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react"
 import "./Booklisting.css"
 import {Link } from 'react-router-dom'
-
+import placeholder_image from '../../assets/images/classic_red_book_cover_by_semireal_stock_d1u2rbq-375w-2x.jpg'
 // booklisting will take props to display JSON data from Home 
 function BookListing({title, author, image, genre, id,}){
-    const [imageState, setImageState] = useState('../../src/assets/images/classic_red_book_cover_by_semireal_stock_d1u2rbq-375w-2x.jpg');
+    const [imageState, setImageState] = useState(placeholder_image);
     useEffect(() => {
         if (image)
         {
