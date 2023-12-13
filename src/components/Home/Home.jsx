@@ -9,6 +9,7 @@ function Home() {
     const [genre, setGenre] = useState ('')
     const [genresList, setGenresList] = useState([])
     const [genresListLength, setGenresListLength] = useState(0)
+    const [searchTerm, setSearchTerm] = useState('');
     const controls = useAnimationControls()
 
     useEffect(() => {
@@ -25,7 +26,10 @@ function Home() {
     useEffect (function() {
         let url = 'https://book-swap-api.dev.io-academy.uk/api/books?claimed=0'
         if (genre != '') {
-            url = 'https://book-swap-api.dev.io-academy.uk/api/books?claimed=0' + '&genre=' + genre
+            url += '&genre=' + genre
+        }
+        if (searchTerm != '') {
+            url += '&search=' + searchTerm
         }
         fetch(url)
             .then(function (res) {
@@ -35,10 +39,8 @@ function Home() {
                 setBooks(bookData.data)
                 //animate booklists
                 controls.start({opacity: [0, 1], transition: {duration: .5}})
-                
-
             })
-    }, [genre])
+    }, [genre, searchTerm])
    
    
 
@@ -51,28 +53,31 @@ function Home() {
                     <span></span>
                 </div> 
                 
-        
-                <div className="filter">
-                    <label > Filter by genre:</label>
-                    <select id='addgenre' value={genre} onChange={(e) => setGenre(e.target.value)}>
-                        <option value=''>Select</option>
-                        {genresListLength > 0 && genresList.map(list_item => 
-                        <option key={list_item.id} value={list_item.id}>{list_item.name}</option>)}
-                    </select>
-                </div>
-                    <motion.div className='books-container' animate={controls}>
-                        {books.map(book => 
-                        
-                        <BookListing 
-                            title={book.title} 
-                            author={book.author} 
-                            image={book.image} 
-                            genre={book.genre.name} 
-                            id={book.id} 
-                            key={book.id}
-                            /> 
-                        )}
-                    </motion.div>
+            <div className="content-wrapper">
+                    <div className="filter">
+                        <label >Search</label>
+                        <input type='text' value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)}></input>
+                        <label > Filter by genre:</label>
+                        <select id='addgenre' value={genre} onChange={(e) => setGenre(e.target.value)}>
+                            <option value=''>Select</option>
+                            {genresListLength > 0 && genresList.map(list_item => 
+                            <option key={list_item.id} value={list_item.id}>{list_item.name}</option>)}
+                        </select>
+                    </div>
+                        <motion.div className='books-container' animate={controls}>
+                            {books.map(book => 
+                            
+                            <BookListing 
+                                title={book.title} 
+                                author={book.author} 
+                                image={book.image} 
+                                genre={book.genre.name} 
+                                id={book.id} 
+                                key={book.id}
+                                /> 
+                            )}
+                        </motion.div>
+            </div>
         </motion.div>
         
         
