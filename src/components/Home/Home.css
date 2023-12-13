@@ -102,3 +102,22 @@ p {
 body {
     font-size: 1.2rem
 }
+
+div.filter {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+div.filter select {
+    width: 200px;
+    font: inherit;
+}
+
+div.filter label {
+    padding-right: 10px;
+}
+
+#search-label {
+    margin: 0;
+}

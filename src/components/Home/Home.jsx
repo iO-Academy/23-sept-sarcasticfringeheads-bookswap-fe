@@ -12,6 +12,12 @@ function Home() {
     const [searchTerm, setSearchTerm] = useState('');
     const controls = useAnimationControls()
 
+
+    function stripNonAlphaNumComma(str) {
+        const pattern = /[^a-zA-Z0-9,\s]+/g;
+        return str.replace(pattern, '');
+      }
+
     useEffect(() => {
         fetch("https://book-swap-api.dev.io-academy.uk/api/genres")
             .then((response) => {
@@ -29,7 +35,7 @@ function Home() {
             url += '&genre=' + genre
         }
         if (searchTerm != '') {
-            url += '&search=' + searchTerm
+            url += '&search=' + stripNonAlphaNumComma(searchTerm)
         }
         fetch(url)
             .then(function (res) {
@@ -42,6 +48,7 @@ function Home() {
             })
     }, [genre, searchTerm])
    
+    
    
 
     return (
@@ -55,14 +62,18 @@ function Home() {
                 
             <div className="content-wrapper">
                     <div className="filter">
-                        <label >Search</label>
+                        <div>
+                        <label id='search-label'>Search:</label>
                         <input type='text' value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)}></input>
-                        <label > Filter by genre:</label>
+                        </div>
+                        <div>
+                        <label >Filter by genre:</label>
                         <select id='addgenre' value={genre} onChange={(e) => setGenre(e.target.value)}>
                             <option value=''>Select</option>
                             {genresListLength > 0 && genresList.map(list_item => 
                             <option key={list_item.id} value={list_item.id}>{list_item.name}</option>)}
                         </select>
+                        </div>
                     </div>
                         <motion.div className='books-container' animate={controls}>
                             {books.map(book => 

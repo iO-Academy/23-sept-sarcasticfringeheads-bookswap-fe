@@ -11,7 +11,7 @@ form.add-book-form label {
     padding-top: 40px;
 }
 
-form.add-book-form input, select, textarea{
+form.add-book-form input, form.add-book-form select, form.add-book-form textarea {
     margin-top: 20px;
     width: 300px;
     font: inherit;
