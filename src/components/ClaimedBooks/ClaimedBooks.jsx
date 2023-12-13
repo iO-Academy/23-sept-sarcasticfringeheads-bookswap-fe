@@ -6,9 +6,9 @@ import "./ClaimedBooks.css"
 function ClaimedBooks() {
     const [books, setBooks] = useState([])
     const [genre, setGenre] = useState ('')
-
     const [genresList, setGenresList] = useState([])
     const [genresListLength, setGenresListLength] = useState(0)
+    const [searchTerm, setSearchTerm] = useState('');
 
     const controls = useAnimationControls()
 
@@ -24,20 +24,23 @@ function ClaimedBooks() {
     }, [])
 
     useEffect (function() {
-        let url = 'https://book-swap-api.dev.io-academy.uk/api/books?claimed=1'
+        let url = 'https://book-swap-api.dev.io-academy.uk/api/books?claimed=0'
         if (genre != '') {
-            url = 'https://book-swap-api.dev.io-academy.uk/api/books?claimed=1' + '&genre=' + genre
+            url += '&genre=' + genre
         }
-
+        if (searchTerm != '') {
+            url += '&search=' + searchTerm
+        }
         fetch(url)
             .then(function (res) {
                 return res.json()
             })
             .then(function (bookData) {
                 setBooks(bookData.data)
+                //animate booklists
                 controls.start({opacity: [0, 1], transition: {duration: .5}})
             })
-    }, [genre])
+    }, [genre, searchTerm])
 
     return (
         <motion.div initial={{x: '-100%'}} animate={{x: '0%', transition: {duration: 0.3}}} exit={{x: '100%', transition: {duration: 0.6}}}>
@@ -47,6 +50,8 @@ function ClaimedBooks() {
         </div> 
 
         <div className="filter">
+            <label >Search</label>
+            <input type='text' value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)}></input>
             <label>Filter by genre:</label>
             <div className="content-select">
                 <select id='addgenre' value={genre} onChange={(e) => setGenre(e.target.value)}>
