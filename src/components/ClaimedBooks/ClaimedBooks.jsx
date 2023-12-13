@@ -50,7 +50,7 @@ function ClaimedBooks() {
         </div> 
 
         <div className="filter">
-            <label >Search</label>
+            <label>Search:</label>
             <input type='text' value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)}></input>
             <label>Filter by genre:</label>
             <div className="content-select">
