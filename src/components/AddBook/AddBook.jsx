@@ -56,7 +56,7 @@ function AddBook(){
         }
         
         console.log(`title: ${title}, author: ${author}, genre_id: ${genre}, blurb: ${blurb}, image: ${imageurl}, year: ${year}`)
-        fetch ("https://book-swap-api.dev.io-academy.uk/api/books", {
+        fetch (" https://23-sarcasticfringehead-book-api.dev.io-academy.uk/api/books", {
             method: 'POST',
             mode: 'cors',
             headers: {'content-type':'application/json', 'accept':'application/json'

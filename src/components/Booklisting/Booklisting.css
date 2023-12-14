@@ -1,14 +1,23 @@
 .singleBookWrapper {
     display: flex;
     flex-direction: column;
-    align-content: center;
-    align-items: center;
+    justify-content: space-between;
     margin: 30px;
-    padding: 3px 20px;
+    padding: 3px 35px;
     border-radius: 5px;
+    background: rgb(234, 234, 234, 0.1);
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
     cursor: pointer;
     text-decoration: none;
+    text-align: left;
+}
+.singleBookWrapper h1 {
+max-width: 300px;
+text-align: left;
+}
+
+.singleBookWrapper h2 {
+    text-align: left;
 }
 .singleBookWrapper img {
     height: 400px;

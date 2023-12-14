@@ -77,8 +77,8 @@ span.reviewerrormessage {
 }
 
 #come-and-review {
-        width: 20ch;
-        animation: typing 2s steps(20), blink .5s step-end infinite alternate;
+        width: 12ch;
+        animation: typing 2s steps(14), blink .5s step-end infinite alternate;
         white-space: nowrap;
         overflow: hidden;
         border-right: 3px solid;

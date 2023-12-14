@@ -30,7 +30,7 @@ function SingleBookDetail () {
     
 
     useEffect (function(){
-        fetch('https://book-swap-api.dev.io-academy.uk/api/books/' +id)
+        fetch('https://23-sarcasticfringehead-book-api.dev.io-academy.uk/api/books/' +id)
         .then(function(res){
             return res.json()
         })

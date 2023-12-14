@@ -137,6 +137,7 @@ span#x-stars {
 
 p.blurb {
     max-width: 480px;
+    line-height: 1.8rem;
 }
 
 #book-info-wrapper {

@@ -19,7 +19,7 @@ function Home() {
       }
 
     useEffect(() => {
-        fetch("https://book-swap-api.dev.io-academy.uk/api/genres")
+        fetch(" https://23-sarcasticfringehead-book-api.dev.io-academy.uk/api/genres")
             .then((response) => {
                 return response.json()
             })
@@ -30,7 +30,7 @@ function Home() {
     }, [])
 
     useEffect (function() {
-        let url = 'https://book-swap-api.dev.io-academy.uk/api/books?claimed=0'
+        let url = ' https://23-sarcasticfringehead-book-api.dev.io-academy.uk/api/books?claimed=0'
         if (genre != '') {
             url += '&genre=' + genre
         }
@@ -56,14 +56,14 @@ function Home() {
         <motion.div initial={{x: '-100%'}} animate={{x: '0%', transition: {duration: 0.3}}} exit={{x: '100%', transition: {duration: 0.6}}}>
             <div className="welcome">
             <motion.h1 initial={{opacity: 0, y: -40}} animate={{opacity: 1, y: 0}} transition={{duration: 1}}>Welcome to Book Swap</motion.h1>
-                    <h3>Checkout these available books. Choose a book to view further details and enter your details to claim it</h3>
+                    <h3 style={{letterSpacing: 1}}>Checkout these available books. Choose a book to view further details and enter your details to claim it</h3>
                     <span></span>
                 </div> 
                 
             <div className="content-wrapper">
                     <div className="filter">
                         <div>
-                        <label id='search-label'>Search:</label>
+                        <label>Search:</label>
                         <input type='text' value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)}></input>
                         </div>
                         <div>

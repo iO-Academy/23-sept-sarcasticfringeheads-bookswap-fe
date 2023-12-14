@@ -4,11 +4,11 @@
     flex-direction: row;
     justify-content:center;
     align-items: center;
-    padding:10px;
-    gap: 20px;
-    left:0px;
-    margin-top:50px;
-    height:50px;
+    padding: 10px;
+    gap: 10px;
+    left: 0px;
+    margin-top: 50px;
+    height: 50px;
 }
 
 .claimed_filter {
@@ -28,7 +28,11 @@ margin-right:-10px;
 font-weight: bold;
 margin-top: 20px;
 } */
-
+#claimed-welcome {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 @media screen and (max-width: 750px) {
     #claimed-welcome {
         background: rgb(234, 234, 234);

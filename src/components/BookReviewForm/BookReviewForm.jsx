@@ -11,7 +11,7 @@ function BookReviewForm({id, reviews, setReviews}){
 
     function submitReview (event){
         event.preventDefault()
-        fetch('https://book-swap-api.dev.io-academy.uk/api/reviews', {
+        fetch('https://23-sarcasticfringehead-book-api.dev.io-academy.uk/api/reviews', {
             method: 'POST',
             mode: 'cors',
             headers: {
@@ -69,7 +69,7 @@ function BookReviewForm({id, reviews, setReviews}){
 
     return (
         <>
-            <h2 className="title" id='come-and-review'>Come and Review the Book?</h2>
+            <h2 className="title" id='come-and-review'>Leave a Review</h2>
             <div className="reviewbook">
                 <h2>Your Review:</h2>
                 {success && <span className='successmessage'>Review submitted</span>}

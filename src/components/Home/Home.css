@@ -100,13 +100,20 @@ p {
 }
 
 body {
-    font-size: 1.2rem
+    font-size: 1.2rem;
 }
 
-div.filter {
+.filter {
+    position:relative;
     display: flex;
     flex-direction: row;
+    justify-content:center;
     align-items: center;
+    padding: 10px;
+    gap: 10px;
+    left: 0px;
+    margin-top: 50px;
+    height: 50px;
 }
 
 div.filter select {
@@ -115,7 +122,7 @@ div.filter select {
 }
 
 div.filter label {
-    padding-right: 10px;
+    /* padding-right: 10px; */
 }
 
 #search-label {

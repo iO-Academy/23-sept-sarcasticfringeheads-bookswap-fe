@@ -9,7 +9,6 @@ nav {
     left:0;
     right: 0;
     width: 100%;
-    background: rgba(0, 0, 0, .8);
     padding: 10px;
     max-height: 100px;
     z-index: 1;
@@ -51,15 +50,14 @@ nav ul a {
 nav ul a:hover {
     text-decoration: none;
     cursor: pointer;
-    color: rgb(0, 238, 255);
 }
 
 .navbooks {
-    font-size: 20px;
+    font-size: 25px;
 }
 
 nav ul a.active {
-    color: rgb(0, 238, 255);
+    font-weight: 600;
 }
 
 @media screen and (max-width: 400px) {

@@ -12,7 +12,7 @@ function ClaimBookForm({id, bookClaim}) {
         
         event.preventDefault();
     
-        fetch('https://book-swap-api.dev.io-academy.uk/api/books/claim/' + id, {
+        fetch(' https://23-sarcasticfringehead-book-api.dev.io-academy.uk/api/books/claim/' + id, {
             method: 'PUT',
             mode: 'cors',
             headers: {

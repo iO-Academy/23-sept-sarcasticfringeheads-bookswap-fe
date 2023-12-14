@@ -13,7 +13,7 @@ function ClaimedBooks() {
     const controls = useAnimationControls()
 
     useEffect(() => {
-        fetch("https://book-swap-api.dev.io-academy.uk/api/genres")
+        fetch(" https://23-sarcasticfringehead-book-api.dev.io-academy.uk/api/genres")
             .then((response) => {
                 return response.json()
             })
@@ -24,7 +24,7 @@ function ClaimedBooks() {
     }, [])
 
     useEffect (function() {
-        let url = 'https://book-swap-api.dev.io-academy.uk/api/books?claimed=0'
+        let url = ' https://23-sarcasticfringehead-book-api.dev.io-academy.uk/api/books?claimed=0'
         if (genre != '') {
             url += '&genre=' + genre
         }
@@ -46,7 +46,7 @@ function ClaimedBooks() {
         <motion.div initial={{x: '-100%'}} animate={{x: '0%', transition: {duration: 0.3}}} exit={{x: '100%', transition: {duration: 0.6}}}>
         <div id='claimed-welcome' className="welcome">
             <motion.h1 id='claimed-h1' initial={{opacity: 0, y: -40}} animate={{opacity: 1, y: 0}} transition={{duration: 1}}>You missed your chance!</motion.h1>
-                <h3>The following books have already been claimed, but don't worry, feel free to have a look, if you would like to return a book please do so by entering your email on the book page.</h3>
+                <h3 style={{letterSpacing: 1, maxWidth: '70%', textAlign: 'center', marginTop: '20px'}}>The following books have already been claimed, but don't worry, feel free to have a look, if you would like to return a book please do so by entering your email on the book page.</h3>
         </div> 
 
         <div className="filter">

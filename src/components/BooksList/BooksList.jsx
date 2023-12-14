@@ -11,7 +11,7 @@ function BooksList({claimed}) {
     const [genresListLength, setGenresListLength] = useState(0)
 
     useEffect(() => {
-        fetch("https://book-swap-api.dev.io-academy.uk/api/genres")
+        fetch(" https://23-sarcasticfringehead-book-api.dev.io-academy.uk/api/genres")
             .then((response) => {
                 return response.json()
             })
@@ -22,10 +22,10 @@ function BooksList({claimed}) {
     }, [])
 
     useEffect (function() {
-        let url = `https://book-swap-api.dev.io-academy.uk/api/books?claimed=${claimed}`
+        let url = ` https://23-sarcasticfringehead-book-api.dev.io-academy.uk/api/books?claimed=${claimed}`
         if (genre != '') {
-            // url = 'https://book-swap-api.dev.io-academy.uk/api/books?claimed=' + {claimed} + '&genre=' + genre
-            url = `https://book-swap-api.dev.io-academy.uk/api/books?claimed=${claimed}&genre=${genre}`
+            // url = ' https://23-sarcasticfringehead-book-api.dev.io-academy.uk/api/books?claimed=' + {claimed} + '&genre=' + genre
+            url = ` https://23-sarcasticfringehead-book-api.dev.io-academy.uk/api/books?claimed=${claimed}&genre=${genre}`
         }
 
         fetch(url)
