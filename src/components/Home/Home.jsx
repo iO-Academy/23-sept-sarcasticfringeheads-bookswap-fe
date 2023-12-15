@@ -76,7 +76,7 @@ function Home() {
                         </div>
                     </div>
                         <motion.div className='books-container' animate={controls}>
-                            {books.map(book => 
+                            {books && books.map(book => 
                             
                             <BookListing 
                                 title={book.title} 

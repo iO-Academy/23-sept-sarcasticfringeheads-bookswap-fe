@@ -63,7 +63,7 @@ function ClaimedBooks() {
        </div>
       
         <motion.div animate={controls} className ='books-container'>
-            {books.map(book => 
+            {books && books.map(book => 
 
          <BookListing
             title={book.title} 
